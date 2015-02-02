@@ -13,7 +13,9 @@ Breddit is a clone of the beloved reddit. Lurkers (unlogged users) can:
 - [x] Navigate to different subreddits
 - [x] Create accounts
 - [x] Create sessions(log in)
+ 
 Logged in users can:
+
 - [x] Upvote or Downvote posts and comments
 - [x] Comment on posts (and parent comments) 
 - [x] Create new posts that belongs to a subreddit
