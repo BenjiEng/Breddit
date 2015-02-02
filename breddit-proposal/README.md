@@ -16,7 +16,7 @@ Breddit is a clone of the beloved reddit. Lurkers (unlogged users) can:
  
 Logged in users can:
 
-- [x] Upvote or Downvote posts and comments
+- [x] Upvote posts and comments
 - [x] Comment on posts (and parent comments) 
 - [x] Create new posts that belongs to a subreddit
 - [x] Create new subreddits
@@ -36,44 +36,34 @@ I will implement user authentication in Rails based on the practices learned at
 App Academy. By the end of this phase, users will be create a new account, login,
 and submit new posts.
 
-to create blogs and
-posts using simple text forms in Rails views. 
-The most important part of this phase will be pushing the app to Heroku and ensuring that everything works
-before moving on to phase 2.
-
 [Details][phase-one]
 
-### Phase 2: JSON API and First Backbone Views (~2 days)
-I will add API routes to serve blog and post data as JSON, then add Backbone
-models and collections that fetch data from those routes. By the end of this
+### Phase 2: Subreddits (~1 day)
+In rails create the subreddit model and controller as well as the root controller
+and view. I will then add a Backbone subreddit model and collection. After, I will create
+the Form (to create new subreddits), Show, and Index. By the end of this
 phase, the existing Rails views will have been ported over to Backbone.
 
 [Details][phase-two]
 
-### Phase 3: Editing and Displaying Posts (~2 days)
-I plan to use third-party libraries to add functionality to the `PostForm` and
-`PostShow` views in this phase. First I'll need to add a Markdown editor to the
-`PostForm`, and make sure that the Markdown is properly escaped and formatted in
-the `PostShow` view. I also plan to integrate Filepicker for file upload so
-users can add images to blog posts.
+### Phase 3: Viewing and Creating Posts (~1 day)
+I will first be creating a posts controller and post model in Rails. Then I will create 
+the Backbone Post Model and Posts Collection. I will create the Backbone Views for
+PostForm, PostIndex, and PostIndexItem.
 
 [Details][phase-three]
 
-### Phase 4: User Feeds (~1-2 days)
-I'll start by adding a `feed` route that uses the `current_user`'s
-`subscribed_blogs` association to serve a list of blog posts ordered
-chronologically. On the Backbone side, I'll make a `FeedPosts` collection that
-fetches from the new route, then create a `FeedShow` view that uses the new
-collection. Ultimately, this will be the page users see after logging in.
+### Phase 4: Post Feeds (~2 days)
+Add a 'feed' to the Posts Controller in Rails. In Backbone create
+a FeedPosts collection and a FeedShow View to display all the posts
+in a feed for the user. This will be the main page for all users.
 
 [Details][phase-four]
 
-### Phase 5: Searching for Blogs and Posts (~2 days)
-I'll need a `search` route that accepts a query in the params. The controller
-action will run two queries: one to find blogs where the `title` matches
-the search term, and another to find posts where one of their associated `Tag`s
-matches the search term. In Backbone, I plan to implement a `SearchResults` view
-that will display matching blogs in one column and matching posts in another.
+### Phase 5: Comments (~2 days)
+In this phase I will implement the ability to create comments on posts and
+other comments. I will create a Comments Model and Controller in Rails. Then
+I will create a Comments Model and CommentForm View in Backbone.
 
 [Details][phase-five]
 
