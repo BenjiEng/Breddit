@@ -5,8 +5,8 @@
 * Subreddit (:title)
 
 ### Controllers
-SubredditsController (create, destroy, index, show)
-Root Controller
+* SubredditsController (create, destroy, index, show)
+* Root Controller
 
 ### Views
 * Root View
