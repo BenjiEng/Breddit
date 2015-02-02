@@ -1,24 +1,21 @@
-# Phase 5: Searching for Blogs and Posts
+# Phase 5: Comments
 
 ## Rails
 ### Models
+* Comments (:body, :user_id)
 
 ### Controllers
-Api::BlogsController (search)
-Api::PostsController (search)
+* CommentsController (create, show, destroy)
 
 ### Views
 
 ## Backbone
 ### Models
+* Comments
 
 ### Collections
-* SearchBlogs
-* SearchPosts
 
 ### Views
-* BlogSearchItem
-* SearchShow (composite view, contains BlogSearchItem and PostShow subviews)
+* CommentsForm
 
 ## Gems/Libraries
-
