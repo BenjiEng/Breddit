@@ -1,26 +1,26 @@
-# Phase 2: JSON API and First Backbone Views
+# Phase 2: Create Subreddits/Show Subreddits
 
 ## Rails
 ### Models
+* Subreddit (:title)
 
 ### Controllers
-Api::BlogsController (create, destroy, index, show)
-Api::PostsController (create, destroy, show, update)
+SubredditsController (create, destroy, index, show)
+Root Controller
 
 ### Views
-* blogs/show.json.jbuilder
+* Root View
 
 ## Backbone
 ### Models
-* Blog (parses nested `posts` association)
-* Post
+* Subreddit
 
 ### Collections
-* Blogs
-* Posts
+* Subreddits
 
 ### Views
-* BlogShow (composite view, contains PostShow subviews)
-* PostShow
+* SubredditForm
+* SubredditShow
+* SubredditIndex
 
 ## Gems/Libraries
