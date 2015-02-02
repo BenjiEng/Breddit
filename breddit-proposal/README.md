@@ -1,22 +1,24 @@
-# Flux-capacitr
+# Breddit
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+[heroku]: http://breddit.herokuapp.com
 
 ## Minimum Viable Product
-Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
+Breddit is a clone of the beloved reddit. Lurkers (unlogged users) can:
 
+- [x] View a feed of posts from different default subreddits (sorted: upvotes, new, etc.)
+- [x] Click on posts and be redirected to the link url
+- [x] View post comments
+- [x] Navigate to different subreddits
 - [x] Create accounts
-- [x] Create sessions (log in)
-- [x] Create blogs
-- [x] Create blog posts
-- [x] Tag blog posts
-- [x] View blogs and posts
-- [x] Subscribe to blogs
-- [x] View a feed of subscribed blogs
-- [x] Search for blogs by title
-- [x] Search for posts by tag
+- [x] Create sessions(log in)
+Logged in users can:
+- [x] Upvote or Downvote posts and comments
+- [x] Comment on posts (and parent comments) 
+- [x] Create new posts that belongs to a subreddit
+- [x] Create new subreddits
+- [x] Subscribe to different subreddits
 
 ## Design Docs
 * [View Wireframes][views]
@@ -27,11 +29,14 @@ Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Basic Blogs and Posts (~1 day)
+### Phase 1: User Authentication, Basic Subreddits and Posts (~1 day)
 I will implement user authentication in Rails based on the practices learned at
-App Academy. By the end of this phase, users will be able to create blogs and
-posts using simple text forms in Rails views. The most important part of this
-phase will be pushing the app to Heroku and ensuring that everything works
+App Academy. By the end of this phase, users will be create a new account, login,
+and submit new posts.
+
+to create blogs and
+posts using simple text forms in Rails views. 
+The most important part of this phase will be pushing the app to Heroku and ensuring that everything works
 before moving on to phase 2.
 
 [Details][phase-one]
@@ -71,14 +76,7 @@ that will display matching blogs in one column and matching posts in another.
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] Activity history for posts (e.g. likes, reblogs, taggings)
-- [x] Custom urls for blogs
-- [x] 'Like' button and counter for `PostShow` view
-- [x] Pagination of the `FeedShow`, `SearchShow`, and `BlogShow` views
-- [ ] Post types with distinct views (image posts, quote posts, etc)
-- [ ] Reblogging
-- [ ] Support for multiple open sessions
-- [x] User avatars
+
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
