@@ -18,5 +18,5 @@
 ### Collections
 
 ### Views
-
+* The view for a new user login form might have to be made in Backbone
 ## Gems/Libraries
