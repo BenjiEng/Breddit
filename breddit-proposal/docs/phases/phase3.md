@@ -3,8 +3,10 @@
 ## Rails
 ### Models
 * Post (:title, :body, :url, :subreddit_id, :user_id)
+
 ### Controllers
 * Posts Controller
+
 ### Views
 
 ## Backbone
