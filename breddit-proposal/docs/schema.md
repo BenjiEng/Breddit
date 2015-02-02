@@ -1,45 +1,39 @@
 # Schema Information
 
-## blogs
+## subreddits
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
+user_id     | integer   | not null, foreign key (belongs to user? will I need a master user to create all subs?)
 title       | string    | not null
 
-## followings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-blog_id     | integer   | not null, foreign key (references blogs)
-follower_id | integer   | not null, foreign key (references users)
 
 ## posts
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users)
-title       | string    | not null
-body        | string    |
+subreddit_id| integer   | not null, foreign key (belongs to subreddits)
+author_id   | integer   | not null, foreign key (belongs to user)
+title       | string    | not null, unique: true (no reposts!)
+body        | string    | not null,
+url         | string    | not null, 
+upvotes     | integer   | not null, default: 1
 
-## tags
+
+## comments
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-label       | string    | not null, unique
+body        | string    | not null, unique
+author_id   | integer   | not null, foreign key (belongs to user)
+post_id     | integer   | not null, foreign key (belongs to post)
+upvotes     | integer   | not null, default: 1
 
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-post_id     | integer   | not null, foreign key (references posts)
-tag_id      | integer   | not null, foreign key (references tags)
 
 ## users
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-email           | string    | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
-
+(user has many subreddits, comments, posts)
