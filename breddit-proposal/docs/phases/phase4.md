@@ -1,10 +1,10 @@
-# Phase 4: User Feeds
+# Phase 4: Post Feed
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::PostsController (feed)
+PostsController (feed)
 
 ### Views
 posts/feed.json.jbuilder
