@@ -3,14 +3,14 @@
 ## Rails
 ### Models
 * User
-* Blog
+* Subreddit
 * Post
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* BlogsController (create, new, show)
-* PostsController (create, new, show)
+* SubredditsController (create, new, show, destroy)
+* PostsController (create, new, show, destroy)
 
 ### Views
 * users/new.html.erb
