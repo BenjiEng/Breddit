@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resource :session, only: [:new, :create, :destroy]
+  root to: 'static_pages#root'
 
-  resources :users
+  resource :session, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create, :destroy]
+
+  namespace :api, defaults: { format: :json } do
+    resources :subreddits
+    resources :posts
+  end
 end

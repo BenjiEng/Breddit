@@ -1,0 +1,12 @@
+<h1 class="create_sub">Create a new SuBreddit</h1>
+
+  <label for="sub_name">SuBreddit Name</label>
+<br>
+  <input type="text" name="subreddit[name]" id="sub_name" value="<%= subreddit.escape('name') %>">
+<br>
+  <label for="sub_description">SuBreddit Description</label>
+<br>
+  <textarea name="subreddit[description]" id="sub_description" value="<%= subreddit.escape('description') %>"></textarea>
+<br>
+
+<button>Bake the SubBreddit</button>

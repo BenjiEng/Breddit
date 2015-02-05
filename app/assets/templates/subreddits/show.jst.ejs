@@ -1,0 +1,18 @@
+<div class= "show-subreddit-header">
+  <h4><%= subreddit.escape("name") %></h4>
+  <br>
+  <p><%= subreddit.escape("description") %></p>
+</div>
+
+<label for="sub_name">rename SuBreddit</label>
+<br>
+<input type="text" name="subreddit[name]" id="sub_name" value="<%= subreddit.escape('name') %>">
+<br>
+<label for="sub_description">redescribe SuBreddit</label>
+<br>
+<textarea name="subreddit[description]" id="sub_description"> "<%= subreddit.escape('description') %>" </textarea>
+<br>
+
+<button>rebake the SubBreddit</button>
+<br>
+<a href="#">Back to SuBreddits Index</a>

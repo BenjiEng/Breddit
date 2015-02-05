@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203193503) do
+ActiveRecord::Schema.define(version: 20150205012211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "posts", force: true do |t|
+    t.string   "title",      null: false
+    t.string   "url"
+    t.text     "content"
+    t.integer  "user_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "subreddits", force: true do |t|
+    t.string   "name",        null: false
+    t.text     "description", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subreddits", ["name"], name: "index_subreddits_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username",        null: false

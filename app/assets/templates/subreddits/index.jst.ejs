@@ -1,0 +1,15 @@
+<h3>SuBreddits Index View</h3>
+
+<ul class='subreddits'>
+  <% subreddits.each(function (subreddit) { %>
+    <li>
+      <a href="#/subreddits/<%= subreddit.get('id') %>">
+          <%= subreddit.escape("name") %>
+      </a>
+    </li>
+  <% }); %>
+</ul>
+
+
+<ul class="subs"></ul>
+<a href="#/subreddits/new">New SuBreddit</a>
