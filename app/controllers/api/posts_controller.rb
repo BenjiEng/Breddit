@@ -1,7 +1,10 @@
 class Api::PostsController < ApplicationController
+  #before_action :require_signed_in!, except: [:show]
+  before_action :require_user_owns_post!, only: [:edit, :update]
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
       render :json => @post
     else
@@ -37,7 +40,13 @@ class Api::PostsController < ApplicationController
 
   private
 
-  def subreddit_params
+  def post_params
     params.require(:post).permit(:title, :url, :content, :user_id)
   end
+
+  def require_user_owns_post!
+    return if Post.find(params[:id]).user_id == current_user
+    render json: "Forbidden", status: forbidden
+  end
+
 end

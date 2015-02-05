@@ -1,0 +1,16 @@
+<h3>Das Front Page!</h3>
+
+<ul class='posts'>
+  <% posts.each(function (post) { %>
+    <li>
+      <a href="#/posts/<%= post.get('id') %>">
+          <%= post.escape("title") %>
+      </a>
+    </li>
+  <% }); %>
+</ul>
+
+
+<ul class="subs"></ul>
+<a href="#/subreddits/new">New SuBreddit</a>
+<a href="#/posts/new">Create a new Post!</a>

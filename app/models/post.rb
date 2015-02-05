@@ -1,3 +1,3 @@
-class Subreddit < ActiveRecord::Base
-  validates :title, :user_id, presence: true
+class Post < ActiveRecord::Base
+  validates :title, :content, presence: true
 end

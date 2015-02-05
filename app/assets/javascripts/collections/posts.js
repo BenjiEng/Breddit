@@ -2,7 +2,7 @@ BredditApp.Collections.Posts = Backbone.Collection.extend({
   url: '/api/posts',
   model: BredditApp.Models.Post,
 
-  getOrFetch(id): function(){
+  getOrFetch: function(id){
     var post = this.get(id);
     var posts = this;
     if(!post) {
