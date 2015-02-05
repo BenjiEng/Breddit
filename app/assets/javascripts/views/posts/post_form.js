@@ -5,6 +5,10 @@ BredditApp.Views.PostForm = Backbone.View.extend({
     'click button': 'submit'
   },
 
+  initialize: function(options){
+    this.subs =  options.subreddits;
+  },
+
   submit: function(event){
     event.preventDefault();
     var attrs = this.$el.serializeJSON();
@@ -19,7 +23,7 @@ BredditApp.Views.PostForm = Backbone.View.extend({
   },
 
   render: function(){
-    var renderedContent = this.template({post: this.model});
+    var renderedContent = this.template({post: this.model, subreddits: this.subs});
     this.$el.html(renderedContent);
     return this;
   }

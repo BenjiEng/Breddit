@@ -12,7 +12,14 @@
 <label for="post_content">Content</label>
 <textarea name="post[content]" id="post_content" value="<%= post.escape('content') %>"></textarea>
 <br>
-<label for="subreddit">Subreddit</label>
+<label for="sub_id">Subreddit</label>
+<br>
+  <% subreddits.each(function (subreddit) {%>
+    <label>
+      <input type="checkbox" name="post[sub_id]" id="sub_id" value="<%= subreddit.get('id') %>">
+        <%= subreddit.escape('name') %>
+    </label>
+  <% }); %>
 <br>
 
 <button>Create Post</button>

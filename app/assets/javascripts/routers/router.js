@@ -10,7 +10,6 @@ BredditApp.Routers.Router = Backbone.Router.extend({
     "posts/:id": "showPost",
     "post/:id/edit": "editPost",
 
-
     "subreddits": "subredditsIndex",
     "subreddits/new": "newSubreddit",
     "subreddits/:id": "showSubreddit",
@@ -21,13 +20,20 @@ BredditApp.Routers.Router = Backbone.Router.extend({
 
   postsIndex: function(){
     BredditApp.Collections.posts.fetch();
-    var indexView = new BredditApp.Views.PostsIndex({collection: BredditApp.Collections.posts});
+    var indexView = new BredditApp.Views.PostsIndex({
+      collection: BredditApp.Collections.posts,
+      subreddits: BredditApp.Collections.subreddits
+    });
     this._swapView(indexView);
   },
 
   newPost: function(){
     var newPost = new BredditApp.Models.Post();
-    var newView = new BredditApp.Views.PostForm({model: newPost, collection: BredditApp.Collections.posts});
+    var newView = new BredditApp.Views.PostForm({
+      model: newPost,
+      collection: BredditApp.Collections.posts,
+      subreddits: BredditApp.Collections.subreddits
+      });
     this._swapView(newView);
   },
 

@@ -1,6 +1,6 @@
 class Api::SubredditsController < ApplicationController
   #need moderator before create, update or destroy
-
+  before_action :require_signed_in!, except: [:show]
   def create
     @subreddit = Subreddit.new(subreddit_params)
     if @subreddit.save

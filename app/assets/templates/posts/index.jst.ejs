@@ -1,3 +1,13 @@
+<ul class='subreddits'>
+  <% subreddits.each(function (subreddit) { %>
+    <li>
+      <a href="#/subreddits/<%= subreddit.get('id') %>">
+        <%= subreddit.escape("name") %>
+      </a>
+    </li>
+    <% }); %>
+</ul>
+
 <h3>Das Front Page!</h3>
 
 <ul class='posts'>
@@ -13,4 +23,5 @@
 
 <ul class="subs"></ul>
 <a href="#/subreddits/new">New SuBreddit</a>
+<a href="#/subreddits">All SuBreddits</a>
 <a href="#/posts/new">Create a new Post!</a>
