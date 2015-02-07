@@ -1,6 +1,19 @@
 // Place all the styles related to the Subreddits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.create_sub {
-  background-color: lightblue;
+
+ul .subs-head {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.subs-head li {
+  display: inline;
+}
+
+nav.right-nav {
+  position: absolute;
+  top:0px;
+  right: 0px;
 }

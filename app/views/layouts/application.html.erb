@@ -8,13 +8,32 @@
 </head>
 <body>
 
-  <% if current_user %>
-    <%= current_user.username %>
-    <%= button_to "Sign Out", session_url, method: :delete %>
-  <% else %>
-  <%= link_to "Sign in!", new_session_url %>
-  <br><br>
-  <% end %>
+  <header>
+    <nav class="top">
+      <ul class="subs-head">Some Default Subs:
+        <li> <a href="#/subreddits/54">HoeDown  </a>/ </li>
+        <li> <a href="#/subreddits/55">NotFunny </a>/ </li>
+        <li> <a href="#/subreddits/56">Awwww    </a>/ </li>
+        <li> <a href="#/subreddits/57">Robotz   </a>/ </li>
+      </ul>
+    </nav>
+
+    <nav class="right-nav">
+        <% if current_user %>
+          <p class="user-name"> <%= current_user.username %> </p>
+          <p class="sign-out"> <%= button_to "Sign Out", session_url, method: :delete %> </p>
+          <a class= "create-bar" href="#/subreddits/new">Create a subreddit</a>
+          <br>
+          <a class= "create-bar" href="#/posts/new">Submit a new post</a>
+        <% else %>
+          <%= link_to "Sign in!", new_session_url %>
+        <% end %>
+    </nav>
+
+  </header>
+
+
+
 
 <% if flash[:errors] %>
   <% flash[:errors].each do |error| %>
@@ -23,6 +42,7 @@
 <% end %>
 
 <%= yield %>
+
 
 </body>
 </html>

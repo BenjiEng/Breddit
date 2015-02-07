@@ -6,36 +6,36 @@ class Api::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      render :json => @post
+      render "show"
     else
-      render :json => @post.errors.full_messages
+      render :json => @post.errors
     end
   end
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
-      redirect_to(api_post_url(@post))
+    if @post.update_attributes(post_params)
+      render "show"
     else
-      flash.now[:errors] = @post.errors.full_messages
-      render :edit
+      render :json => @post.errors
     end
   end
 
   def show
     @post = Post.find(params[:id])
-    render :show
+    @comments = @post.comments
+    render "show"
   end
 
   def index
     @posts = Post.all
-    render :index
+    render "index"
   end
 
   def destroy
     @post = Post.find(params[:id])
-    @post.delete
-    redirect_to(api_posts_url)
+    @post.destroy!
+    render "show"
   end
 
   private
@@ -44,9 +44,9 @@ class Api::PostsController < ApplicationController
     params.require(:post).permit(:title, :url, :content, :user_id, :sub_id)
   end
 
-  def require_user_owns_post!
-    return if Post.find(params[:id]).user_id == current_user
-    render json: "Forbidden", status: forbidden
-  end
+  # def require_user_owns_post!
+  #   return if Post.find(params[:id]).user_id == current_user
+  #   render json: "Forbidden", status: forbidden
+  # end
 
 end

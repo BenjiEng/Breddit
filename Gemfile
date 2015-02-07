@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.6'
 gem 'pg'
+#gem 'sass(~> 3.2)'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -20,5 +21,6 @@ group :development do
 end
 
 gem 'bcrypt-ruby', require: 'bcrypt'
+#gem 'bootstrap-sass'
 gem 'kaminari'
 gem 'backbone-on-rails'

@@ -3,6 +3,8 @@ BredditApp.Views.SubredditShow = Backbone.View.extend({  //extend Composite View
 
   initialize: function(){
     this.listenTo(this.model, 'sync', this.render)
+
+    //for a composite view here you need to only select those posts tagged with sub_id
   },
 
   render: function(){

@@ -2,23 +2,24 @@
 
 
 <h1 class="create_post">Create a new Post :3</h1>
-
+<form>
 <label for="post_title">Post Title</label>
-<input type="text" name="post[title]" id="post_title" value="<%= post.escape('title') %>">
+  <input type="text" name="post[title]" id="post_title" value="<%= post.escape('title') %>">
 <br>
+
 <label for="post_url">Link to URL</label>
-<input type="text" name="post[url]" id="post_url" value="">
+  <input type="text" name="post[url]" id="post_url" value="">
 <br>
+
 <label for="post_content">Content</label>
-<textarea name="post[content]" id="post_content" value="<%= post.escape('content') %>"></textarea>
+  <textarea name="post[content]" id="post_content" value="<%= post.escape('content') %>"></textarea>
 <br>
-<label for="sub_id">Subreddit</label>
-<br>
-  <% subreddits.each(function (subreddit) {%>
-    <label>
+
+<h3>Subreddit</h3>
+  <% subreddits.each(function (subreddit) { %>
       <input type="checkbox" name="post[sub_id]" id="sub_id" value="<%= subreddit.get('id') %>">
-        <%= subreddit.escape('name') %>
-    </label>
+      <%= subreddit.escape('name') %>
+    </input>
   <% }); %>
 <br>
 

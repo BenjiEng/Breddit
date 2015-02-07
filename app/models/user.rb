@@ -6,6 +6,13 @@ class User < ActiveRecord::Base
   attr_reader :password
   before_validation :ensure_session_token
 
+  has_many(
+    :comments,
+    class_name: "Comment",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     return nil if user.nil?

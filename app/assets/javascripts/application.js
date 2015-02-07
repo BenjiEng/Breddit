@@ -17,6 +17,7 @@
 //= require breddit_app
 //= require jquery.serializejson.min.js
 //= require_tree ../templates
+//= require_tree ./utils
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views

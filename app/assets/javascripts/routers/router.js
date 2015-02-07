@@ -1,6 +1,6 @@
 BredditApp.Routers.Router = Backbone.Router.extend({
 
-  initialize: function(options){ //what is options?
+  initialize: function(options){
     this.$rootEl = options.$rootEl
   },
 
@@ -9,6 +9,7 @@ BredditApp.Routers.Router = Backbone.Router.extend({
     "posts/new": "newPost",
     "posts/:id": "showPost",
     "post/:id/edit": "editPost",
+    "post/:id/comments/new": "newComment",
 
     "subreddits": "subredditsIndex",
     "subreddits/new": "newSubreddit",
@@ -20,21 +21,22 @@ BredditApp.Routers.Router = Backbone.Router.extend({
 
   postsIndex: function(){
     BredditApp.Collections.posts.fetch();
-    var indexView = new BredditApp.Views.PostsIndex({
-      collection: BredditApp.Collections.posts,
-      subreddits: BredditApp.Collections.subreddits
-    });
+    var indexView = new BredditApp.Views.PostsIndex({collection: BredditApp.Collections.posts});
     this._swapView(indexView);
   },
 
   newPost: function(){
-    var newPost = new BredditApp.Models.Post();
-    var newView = new BredditApp.Views.PostForm({
-      model: newPost,
-      collection: BredditApp.Collections.posts,
-      subreddits: BredditApp.Collections.subreddits
-      });
-    this._swapView(newView);
+    BredditApp.Collections.subreddits.fetch({
+      success: function(){
+        var newPost = new BredditApp.Models.Post();
+        var newView = new BredditApp.Views.PostForm({
+          model: newPost,
+          collection: BredditApp.Collections.posts,
+          subs: BredditApp.Collections.subreddits
+        });
+        this._swapView(newView);
+      }.bind(this)
+    });
   },
 
   showPost: function(id){
@@ -47,6 +49,14 @@ BredditApp.Routers.Router = Backbone.Router.extend({
     var post = BredditApp.Collections.posts.getOrFetch(id);
     var editView = new BredditApp.Views.PostForm({model: post, collection: BredditApp.Collections.posts});
     this._swapView(editView);
+  },
+
+//comments//
+
+  newComment: function(id){
+    var newComment = new BredditApp.Models.Comment({post_id: id});
+    // var currentPost =
+    var newCommentView = new BredditApp.Views.CommentForm({model: newComment, collection: BredditApp.Collections.comments });
   },
 
 //subreddits//

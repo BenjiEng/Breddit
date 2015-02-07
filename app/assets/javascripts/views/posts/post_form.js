@@ -6,7 +6,8 @@ BredditApp.Views.PostForm = Backbone.View.extend({
   },
 
   initialize: function(options){
-    this.subs =  options.subreddits;
+    this.subs = options.subs
+    this.listenTo(this.model, 'sync', this.render)
   },
 
   submit: function(event){
@@ -17,8 +18,8 @@ BredditApp.Views.PostForm = Backbone.View.extend({
     this.model.save({}, {
       success: function(){
         that.collection.add(that.model, {merge: true});
-        Backbone.history.navigate("", {trigger: true});
-      }
+        Backbone.history.navigate("/", {trigger: true});
+      },
     });
   },
 
