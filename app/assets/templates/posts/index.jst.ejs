@@ -1,17 +1,25 @@
-<h3>Das Front Page!</h3>
+<h3>Welcome to the Front Page!</h3>
 <div>
-  <ul class='posts'>
+  <ol>
+
     <% posts.each(function (post) { %>
       <li>
-        <a href="#/posts/<%= post.get('id') %>">
-            <%= post.escape("title") %>
-        </a>
+        <a class="post-ind-show" target="_blank" href="<%= post.escape("url")%>">
+          <img src="<%= post.escape("url")%>" width="70" height="70">
+          <%= post.escape("title") %></a>
+
+        <p> submitted <%= post.escape("time_ago") %> ago by <%= post.escape("user_name") %>
+          to
+        <a href="#/subreddits/<%= post.escape("subreddit_id")%>"> <%= post.escape("subreddit_name") %> </p>
+        <a class= "post-comments" href="#/posts/<%= post.get('id') %>"><%= post.escape("comments_count") %> comments</a>
       </li>
+
+      <p>Vote Count:<%= post.escape("vote_count") %></p>
+      <button class="upvote" data-id="<%= post.id %>">Upvote</button>
+      <button class="downvote" data-id="<%= post.id %>">Downvote</button>
     <% }); %>
-  </ul>
+
+  </ol>
 </div>
 
 <ul class="subs"></ul>
-<a href="#/subreddits/new">New SuBreddit</a>
-<a href="#/subreddits">All SuBreddits</a>
-<a href="#/posts/new">Create a new Post!</a>

@@ -56,7 +56,7 @@ BredditApp.Routers.Router = Backbone.Router.extend({
   newComment: function(id){
     var newComment = new BredditApp.Models.Comment({post_id: id});
     // var currentPost =
-    var newCommentView = new BredditApp.Views.CommentForm({model: newComment, collection: BredditApp.Collections.comments });
+    var newCommentView = new BredditApp.Views.CommentForm({model: newComment, collection: BredditApp.Collections.comments});
   },
 
 //subreddits//
@@ -74,8 +74,9 @@ BredditApp.Routers.Router = Backbone.Router.extend({
   },
 
   showSubreddit: function(id){
+    BredditApp.Collections.posts.fetch();
     var subreddit = BredditApp.Collections.subreddits.getOrFetch(id);
-    var showView = new BredditApp.Views.SubredditShow({model: subreddit});
+    var showView = new BredditApp.Views.SubredditShow({model: subreddit, collection: BredditApp.Collections.posts});
     this._swapView(showView);
   },
 

@@ -1,9 +1,17 @@
 <h4>
   <a target="_blank" href="<%= post.escape("url")%>">
+    <img src="<%= post.escape("url")%>" width="70" height="70">
     <%= post.escape("title") %></a>
 </h4>
+
   <p>Content: <%= post.escape("content") %></p>
-  <p>Subreddit: <%= post.sub_id %></p>
+  <p>Subreddit:
+    <a href="#/subreddits/<%= post.escape("subreddit_id")%>">
+       <%= post.escape("subreddit_name") %></a>
+  </p>
+  <% if (post.escape('owns_post') === 'true') { %>
+    <button class="delete-post">Delete Post</button>
+  <% }; %>
 
 <div class="comments-new"></div>
 <div class="comments-div"></div>

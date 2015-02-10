@@ -22,6 +22,7 @@ class Api::SubredditsController < ApplicationController
 
   def show
     @subreddit = Subreddit.find(params[:id])
+    @posts = @subreddit.posts.sort_by(&:created_at).reverse
     render :show
   end
 

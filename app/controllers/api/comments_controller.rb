@@ -4,6 +4,7 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.new(comment_params)
+    @comment.user_id = current_user.id
     if @comment.save
       render json: @comment
     else
@@ -28,12 +29,26 @@ class Api::CommentsController < ApplicationController
 
   def show
     @comment = Comment.find(params[:id])
+    @new_comment = Comment.new(post_id: @comment.post_id, parent_comment_id: @comment.id)
     render "show"
   end
+
+  def upvote
+    @comment = Comment.find(params[:id])
+    @comment.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @comment = Comment.find(params[:id])
+    @comment.downvote_from current_user
+    redirect_to :back
+  end
+
 
   private
 
     def comment_params
-      params.require(:comment).permit(:body, :post_id, :user_id)
+      params.require(:comment).permit(:body, :post_id, :user_id, :parent_comment_id)
     end
 end

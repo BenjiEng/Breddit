@@ -1,7 +1,22 @@
 <li>
   <div class="body">
     <%= comment.escape("body")%>
-    <%= comment.get("time_ago")%>
+  <br>
+    <%= comment.get("author") %> about <%= comment.get("time_ago")%> ago
+  <br>
+    <% if (comment.escape('owns_comment') !== 'true') { %>
+      <button class="destroy-comment">Delete</button>
+    <% } else { %>
+      user not logged in
+    <% }; %>
+    <button class="comment-reply">Reply</button>
+    <div class="comment-form-wrapper"></div>
+  <br>
+
+    <p>Vote Count:<%= comment.escape('com_vote_count') %></p>
+    <button class="upvote">Upvote</button>
+    <button class="downvote">Downvote</button>
+
   </div>
-  <button class="destroy">Destroy</button>
+
 </li>

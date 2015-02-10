@@ -1,10 +1,14 @@
 BredditApp.Views.PostShow = Backbone.CompositeView.extend({
   template: JST['posts/show'],
+  events:{
+    'click button.delete-post': "destroyPost",
+    "click .upvote": "upvote",
+    "click .downvote": "downvote"
+  },
 
-  initialize: function () {
+  initialize: function (options) {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.comments(), "add", this.addComment);
-    // this.listenTo(this.model.comments(), "remove", this.removeComment);
     var newComment = new BredditApp.Models.Comment({post_id: this.model.id})
     var commentNewView =
     new BredditApp.Views.CommentForm({ model: newComment, collection: this.model.comments() });
@@ -13,9 +17,19 @@ BredditApp.Views.PostShow = Backbone.CompositeView.extend({
     this.model.comments().each(this.addComment.bind(this));
    },
 
+  destroyPost: function (event) {
+    event.preventDefault();
+    this.model.destroy({
+      success: function(){
+        Backbone.history.navigate("", {trigger: true});
+      }
+    });
+    this.remove();
+  },
+
   addComment: function (comment) {
     var commentsShow =
-    new BredditApp.Views.CommentsShow({model: comment});
+    new BredditApp.Views.CommentsShow({collection: this.model.comments(), model: comment});
     this.addSubview(".comments-div", commentsShow);
   },
 
@@ -28,6 +42,18 @@ BredditApp.Views.PostShow = Backbone.CompositeView.extend({
     );
 
     this.removeSubview(".comments", subview);
+  },
+
+  upvote: function(event){
+    var id = $(event.currentTarget).data('id');
+    var newUp = new BredditApp.Models.Upvote({post_id: id});
+    newUp.save();
+  },
+
+  downvote: function(event){
+    var id = $(event.currentTarget).data('id');
+    var newDown = new BredditApp.Models.Downvote({post_id: id});
+    newDown.save();
   },
 
   render: function () {

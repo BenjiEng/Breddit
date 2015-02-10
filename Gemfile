@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.6'
 gem 'pg'
-#gem 'sass(~> 3.2)'
+# gem 'sass(~> 3.2)'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -20,7 +20,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'bcrypt-ruby', require: 'bcrypt'
-#gem 'bootstrap-sass'
+gem 'bootstrap-sass'
 gem 'kaminari'
 gem 'backbone-on-rails'

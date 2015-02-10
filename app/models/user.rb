@@ -13,6 +13,18 @@ class User < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many(
+    :subscriptions,
+    class_name: "Subscription",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :subreddits,
+    through: :subscriptions
+  )
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     return nil if user.nil?

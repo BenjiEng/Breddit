@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  acts_as_votable
+
   validates :title, :content, presence: true
 
   has_many(
@@ -12,6 +14,13 @@ class Post < ActiveRecord::Base
     :subreddit,
     class_name: "Subreddit",
     foreign_key: :sub_id,
+    primary_key: :id
+  )
+
+  belongs_to(
+    :user,
+    class_name: "User",
+    foreign_key: :user_id,
     primary_key: :id
   )
 

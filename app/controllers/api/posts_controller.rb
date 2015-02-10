@@ -23,7 +23,7 @@ class Api::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments
+    @comments = @post.comments.sort_by(&:created_at) #need to sort by newests, and upvotes this isnt working
     render "show"
   end
 
@@ -36,6 +36,20 @@ class Api::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy!
     render "show"
+  end
+
+#upvotes/downvotes
+
+  def upvote
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+    render json: @post
+  end
+
+  def downvote
+    @post = Post.find(params[:id])
+    @post.downvote_from current_user
+    render json: @post
   end
 
   private

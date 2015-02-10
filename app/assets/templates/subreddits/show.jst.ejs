@@ -1,21 +1,34 @@
 <div class= "show-subreddit-header">
-  <h4><%= subreddit.escape("name") %></h4>
-  <br>
+  <h3><%= subreddit.escape("name") %></h3>
   <p><%= subreddit.escape("description") %></p>
+  <button>Subscribe</button>
 </div>
 
-<label for="sub_name">rename SuBreddit</label>
-<br>
-<input type="text" name="subreddit[name]" id="sub_name" value="<%= subreddit.escape('name') %>">
-<br>
-<label for="sub_description">redescribe SuBreddit</label>
-<br>
-<textarea name="subreddit[description]" id="sub_description"> "<%= subreddit.escape('description') %>" </textarea>
-<br>
-
-<button>rebake the SubBreddit</button>
 <br>
 
 <div class="subreddit-posts">
+  <ol>
+    <% posts.each(function(post){ %>
+        <% if (post.get('sub_id') === subreddit.id){ %>
+          <li>
+            <a href="#/posts/<%= post.get('id') %>">
+              <img src="<%= post.escape("url")%>" width="70" height="70">
+              <%= post.escape('title') %></a>
+            <p> submitted by <%= post.escape("user_name") %>
+              to <a href="#/subreddits/<%= post.escape("subreddit_id")%>"> <%= post.escape("subreddit_name") %> </p>
+            <a class= "post-comments" href="#/posts/<%= post.get('id') %>"><%= post.escape("comments_count") %> comments</a>
+          </li>
+
+          <p>Vote Count:<%= post.escape("vote_count") %></p>
+          <button class="upvote" data-id="<%= post.id %>">Upvote</button>
+          <button class="downvote" data-id="<%= post.id %>">Downvote</button>
+
+        <% } %>
+    <% }); %>
+  </ol>
 </div>
+
+
+
+<br>
 <a href="#">Back to SuBreddits Index</a>

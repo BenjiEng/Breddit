@@ -1,3 +1,71 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bay {
+  -webkit-transition: all 4s ease 0s;
+  -moz-transition: all 4s ease 0s;
+  -o-transition: all 4s ease 0s;
+  -ms-transition: all 4s ease 0s;
+  transition: all 4s ease 0s;
+  cursor:pointer;
+}
+
+.bay:hover {
+  -webkit-transition: rotate(720deg);
+  -moz-transform: rotate(720deg);
+  -ms-transform: rotate(720deg);
+  -o-transform: rotate(720deg);
+  transform: rotate(720deg);
+}
+
+.breddit {
+  padding-left: 20px;
+  font-size: larger;
+}
+
+.main-head {
+  background-color: #CEE3F8;
+  border: 1px solid #5F99CF;
+}
+
+ul .subs-head {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.subs-head li {
+  display: inline;
+  border: 1px solid black;
+}
+
+nav.right-nav {
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  border: 1px solid black;
+}
+
+div.morelink {
+  display: block;
+  text-align: center;
+  position: relative;
+  border: 1px solid #c4dbf1;
+  background: #ffffff none repeat-x scroll center left;
+  background-position: 0px -278px;
+  background-repeat: repeat;
+  font-size: 150%;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 29px;
+  height: 29px;
+
+  font: normal verdana,arial,helvetica,sans-serif;
+}
+
+div.subtitle {
+  display: block;
+  font: verdana, arial, helvetica, sans-serif;
+  font-color: gray;
+}

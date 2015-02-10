@@ -3,7 +3,17 @@ BredditApp.Views.CommentForm = Backbone.View.extend({
   tagName: "form",
   events:{
     "submit": "submit",
+    "mousedown .new_com" :"clearTextArea",
     "keyup textarea": "renderPreview"
+  },
+
+  initialize: function(){
+    this.listenTo(this.model, 'sync', this.render);
+  },
+
+  clearTextArea: function(event){
+    console.log("yo");
+    this.$('.new_com').empty();
   },
 
   render: function(){

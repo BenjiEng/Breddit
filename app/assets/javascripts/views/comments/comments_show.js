@@ -1,14 +1,18 @@
 BredditApp.Views.CommentsShow = Backbone.View.extend({
   template: JST["comments/show"],
+  template2: JST["comments/form"],
+
   events:{
-    "click button.destroy": "destroyComment",
+    "click button.destroy-comment": "destroyComment",
     // "submit form": "endEditing"
+    "click .comment-reply": "renderCommentForm",
+    "click .upvote": "upvote",
+    "click .downvote": "downvote"
   },
 
   initialize: function(){
     this.listenTo(this.model, 'sync', this.render)
     this.listenTo(this.model, 'remove', this.render)
-
   },
 
   destroyComment: function(event){
@@ -17,10 +21,43 @@ BredditApp.Views.CommentsShow = Backbone.View.extend({
     this.remove();
   },
 
+  renderCommentForm: function(event){
+    event.preventDefault();
+    var childComment = new BredditApp.Models.Comment({parent_id: this.model.id})
+    var commentForm = new BredditApp.Views.CommentForm({
+      model: childComment,
+      collection: this.collection})
+    this.$('.comment-form-wrapper').html(commentForm.render().$el)
+
+  },
+
+  upvote: function(event){
+    $.ajax({
+      url: "/api/comments/" + this.model.id + "/like",
+      dataType: "json",
+      type: 'POST'
+    });
+    // var id = $(event.currentTarget).data('id');
+    // var newUp = new BredditApp.Models.Upvote({comment_id: id});
+    // newUp.save();
+  },
+
+  downvote: function(event){
+    $.ajax({
+      url: "/api/comments/" + this.model.id + "/dislike",
+      dataType: "json",
+      type: 'POST'
+    });
+    // var id = $(event.currentTarget).data('id');
+    // var newDown = new BredditApp.Models.Downvote({comment_id: id});
+    // newDown.save();
+  },
+
   render: function(){
     var renderedContent = this.template({comment: this.model});
     this.$el.html(renderedContent);
     return this;
   }
+
 
 });

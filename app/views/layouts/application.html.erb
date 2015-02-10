@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Breddit the frontpage of the Bakery</title>
+  <title>breddit: the front page of the bakery</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <header>
-    <nav class="top">
-      <ul class="subs-head">Some Default Subs:
-        <li> <a href="#/subreddits/54">HoeDown  </a>/ </li>
-        <li> <a href="#/subreddits/55">NotFunny </a>/ </li>
-        <li> <a href="#/subreddits/56">Awwww    </a>/ </li>
-        <li> <a href="#/subreddits/57">Robotz   </a>/ </li>
-      </ul>
-    </nav>
+  <header class="main-head">
+      <nav class="top">
+        <ul class="subs-head">Some Default Subs:
+          <li> <a href="#/subreddits/54">HoeDown  </a> </li>
+          <li> <a href="#/subreddits/55">NotFunny </a> </li>
+          <li> <a href="#/subreddits/56">Awwww    </a> </li>
+          <li> <a href="#/subreddits/57">Robotz   </a> </li>
+        </ul>
+      </nav>
+  </header>
+  <br>
+  <a href="#"><img class="bay" src="/bay.jpg" alt="baymax" style="width:50px;height:50px"></a><span class="breddit">breddit</span>
 
     <nav class="right-nav">
         <% if current_user %>
           <p class="user-name"> <%= current_user.username %> </p>
           <p class="sign-out"> <%= button_to "Sign Out", session_url, method: :delete %> </p>
-          <a class= "create-bar" href="#/subreddits/new">Create a subreddit</a>
+
+          <div class="morelink">
+            <a class= "create-bar" href="#/posts/new">Submit a new post</a>
+            <div class="nub"></div>
+          </div>
+          <div class="morelink">
+            <a class= "create-bar" href="#/subreddits/new">Create your own subreddit</a>
+            <div class="subtitle">...for your project.</div>
+            <div class="subtitle">...for your movement.</div>
+          </div>
           <br>
-          <a class= "create-bar" href="#/posts/new">Submit a new post</a>
         <% else %>
           <%= link_to "Sign in!", new_session_url %>
         <% end %>
     </nav>
-
-  </header>
-
-
 
 
 <% if flash[:errors] %>
