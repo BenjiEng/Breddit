@@ -1,3 +1,22 @@
 // Place all the styles related to the Subscriptions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sub-button {
+  border: 1px solid #444;
+  padding: 1px 6px;
+  background: #ffffff none repeat-x scroll center left;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 20px;
+  border-radius: 3px;
+}
+
+.sub-option {
+  background-image: url('sprite-reddit.png');
+  background-position: 0px -182px;
+  background-repeat: repeat;
+  width: 68px;
+  height: 20;
+}

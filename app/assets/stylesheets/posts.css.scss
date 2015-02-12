@@ -49,7 +49,11 @@ div.link {
 .upvote {
   background-image: url('sprite-reddit.png');
   background-position: -42px -818px;
+  height: 14px;
+  width: 15px;
   background-repeat: no-repeat;
+  display: block;
+  cursor: pointer;
 }
 
 .votecount {
@@ -58,12 +62,17 @@ div.link {
   font: normal x-small verdana,arial,helvetica,sans-serif;
   font-weight: bold;
   font-size: small;
+  display: block;
 }
 
 .downvote {
   background-image: url('sprite-reddit.png');
-  background-position: -4px -250px;
+  background-position: 0px -818px;
+  height: 14px;
+  width: 15px;
   background-repeat: no-repeat;
+  display: block;
+  cursor: pointer;
 }
 
 a.thumbnail {
@@ -127,6 +136,13 @@ a:hover + .box,.box:hover {
   color: #888;
   font: bold x-small verdana,arial,helvetica,sans-serif;
   padding-left: 4px;
+}
+
+.del {
+  color: #888;
+  font: bold x-small verdana,arial,helvetica,sans-serif;
+  padding-left: 4px;
+  cursor: pointer;
 }
 
 div.comments-new {

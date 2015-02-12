@@ -11,7 +11,6 @@ ul.subs-head {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  height: 23px;
   font: normal x-small verdana,arial,helvetica,sans-serif;
   background-color: #f0f0f0;
   white-space: nowrap;
@@ -135,14 +134,14 @@ div.sidebox{
   position: relative;
   border: 1px solid #c4dbf1;
   background: #ffffff none repeat-x scroll center left;
-  background-image: url(sprite-reddit.png);
+  background-image: url('sprite-reddit.png');
   background-position: 0px -278px;
   background-repeat: repeat;
   font-size: 150%;
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 29px;
-  height: 29px;
+  height: 31px;
 }
 
 .morelink a {
@@ -161,7 +160,7 @@ div.sidebox{
   height: 31px;
   width: 24px;
   background: #ffffff none no-repeat scroll center left;
-  background-image: url(sprite-reddit.JqPSSyjOUZE.png);
+  background-image: url('sprite-reddit.png');
   background-position: -30px -547px;
   background-repeat: no-repeat;
 }
@@ -169,7 +168,7 @@ div.sidebox{
 .bayside{
   position: absolute;
   left: 10px;
-  top: 165px;
+  top: 170px;
 }
 
 div.subtitle {

@@ -1,7 +1,7 @@
 BredditApp.Views.PostShow = Backbone.CompositeView.extend({
   template: JST['posts/show'],
   events:{
-    'click button.delete-post': "destroyPost",
+    'click .del': "destroyPost",
     "click .upvote": "upvote",
     "click .downvote": "downvote"
   },

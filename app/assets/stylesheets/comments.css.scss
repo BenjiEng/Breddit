@@ -28,6 +28,22 @@
   padding-bottom: 6px;
 }
 
-.body {
+.destroy-comment {
+  color: #888;
+  font: bold x-small verdana,arial,helvetica,sans-serif;
+  padding-left: 4px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.comment-reply {
+  color: #888;
+  font: bold x-small verdana,arial,helvetica,sans-serif;
+  padding-left: 4px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.comm-body {
   display: inline-block;
 }

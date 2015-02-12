@@ -25,3 +25,5 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'bootstrap-sass'
 gem 'kaminari'
 gem 'backbone-on-rails'
+
+gem 'rails_12factor'

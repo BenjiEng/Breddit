@@ -1,25 +1,20 @@
 <li style="list-style:none">
   <div class="voteside">
-    <button class="upvote">Upvote</button>
-    <p><%= comment.escape('com_vote_count') %></p>
-    <button class="downvote">Downvote</button>
+    <div class="upvote"></div>
+    <div><%= comment.escape('com_vote_count') %></div>
+    <div class="downvote"></div>
   </div>
-  
-  <div class="body">
-    <%= comment.escape("body")%>
-  <br>
-    <%= comment.get("author") %> about <%= comment.get("time_ago")%> ago
-  <br>
+
+  <div class="comm-body"><%= comment.escape("body")%></div>
+  <div class="infoline"><a href=""><%= comment.get("author") %></a> about <%= comment.get("time_ago")%> ago</div>
+
     <% if (comment.escape('owns_comment') !== 'true') { %>
-      <button class="destroy-comment">Delete</button>
+      <div class="destroy-comment">delete</div>
     <% } else { %>
       user not logged in
     <% }; %>
-    <button class="comment-reply">Reply</button>
-    <div class="comment-form-wrapper"></div>
-  <br>
+      <div class="comment-reply">reply</div>
 
-
-  </div>
+  <div class="comment-form-wrapper"></div>
 
 </li>
