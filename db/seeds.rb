@@ -1,6 +1,6 @@
 User.create!([
-  {username: "CptPicard", password_digest: "$2a$10$CAOjC1SUgmEIyoqGon/J.Ocm5p2r8Ml0WL9.JSZR324vu.19dR1JG", session_token: "xjAJrktYjGzbUjB37_bS7g"},
   {username: "user", password_digest: "$2a$10$sUW.sRpv4UXVAwDIQ9iIhuHKP4r4/HaDbXyVvZ.C5A57SPqWncrMy", session_token: "hQx0DdJ2yUd_3XzAJsQTuA"}
+  {username: "CptPicard", password_digest: "$2a$10$CAOjC1SUgmEIyoqGon/J.Ocm5p2r8Ml0WL9.JSZR324vu.19dR1JG", session_token: "xjAJrktYjGzbUjB37_bS7g"},
 ])
 
 Subreddit.create!([
