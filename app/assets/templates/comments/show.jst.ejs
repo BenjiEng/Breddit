@@ -8,10 +8,8 @@
   <div class="comm-body"><%= comment.escape("body")%></div>
   <div class="infoline"><a href=""><%= comment.get("author") %></a> about <%= comment.get("time_ago")%> ago</div>
 
-    <% if (comment.escape('owns_comment') !== 'true') { %>
+    <% if (comment.escape('owns_comment') === 'true') { %>
       <div class="destroy-comment">delete</div>
-    <% } else { %>
-      user not logged in
     <% }; %>
       <div class="comment-reply">reply</div>
 
