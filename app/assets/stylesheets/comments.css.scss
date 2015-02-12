@@ -10,8 +10,33 @@
   height: 100px;
 }
 
-.save_com {
 
+.save_com {
+  border-radius: 5px;
+  padding: 2px 6px 3px;
+  margin: 0em;
+  font: normal normal normal 11px/normal 'Lucida Grande';
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  color: buttontext;
+  padding: 2px 6px 3px;
+  border: 2px outset buttonface;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  background-color: white;
+  box-sizing: border-box;
 }
 
 .panestack-title {
@@ -26,6 +51,26 @@
   padding-top: 6px;
   display: inline-block;
   padding-bottom: 6px;
+}
+
+.upvotecom {
+  background-image: url('https://s3.amazonaws.com/bredditapp/sprite-reddit.png');
+  background-position: -42px -818px;
+  height: 14px;
+  width: 15px;
+  background-repeat: no-repeat;
+  display: block;
+  cursor: pointer;
+}
+
+.downvotecom {
+  background-image: url('https://s3.amazonaws.com/bredditapp/sprite-reddit.png');
+  background-position: 0px -818px;
+  height: 14px;
+  width: 15px;
+  background-repeat: no-repeat;
+  display: block;
+  cursor: pointer;
 }
 
 .destroy-comment {

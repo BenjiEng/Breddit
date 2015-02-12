@@ -1,6 +1,7 @@
 User.create!([
-  {username: "user", password_digest: "$2a$10$sUW.sRpv4UXVAwDIQ9iIhuHKP4r4/HaDbXyVvZ.C5A57SPqWncrMy", session_token: "hQx0DdJ2yUd_3XzAJsQTuA"}
   {username: "CptPicard", password_digest: "$2a$10$CAOjC1SUgmEIyoqGon/J.Ocm5p2r8Ml0WL9.JSZR324vu.19dR1JG", session_token: "xjAJrktYjGzbUjB37_bS7g"},
+  {username: "user", password_digest: "$2a$10$sUW.sRpv4UXVAwDIQ9iIhuHKP4r4/HaDbXyVvZ.C5A57SPqWncrMy", session_token: "bxrcLUf_Blq8T_i235GQgw"},
+  {username: "guest", password_digest: "$2a$10$5WvqUjFtyGdR2C6F2Vvxsup0m444fyFq44gjRdwTA3IXF9n8mmBqW", session_token: "FXe_EpJxHodJbCglgjHfyA"}
 ])
 
 Subreddit.create!([
@@ -25,7 +26,8 @@ Post.create!([
 
 Comment.create!([
   {body: "My sides.", parent_comment_id: nil, post_id: 1, user_id: 2},
-  {body: "If I had a pumpernickel for every bread pun thread, I'd be rolling in dough.", parent_comment_id: nil, post_id: 7, user_id: 2}
+  {body: "If I had a pumpernickel for every bread pun thread, I'd be rolling in dough.", parent_comment_id: nil, post_id: 7, user_id: 2},
+  {body: "HAJAJA", parent_comment_id: nil, post_id: 1, user_id: 3}
 ])
 
 ActsAsVotable::Vote.create!([
@@ -39,5 +41,14 @@ ActsAsVotable::Vote.create!([
   {votable_id: 8, votable_type: "Post", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
   {votable_id: 9, votable_type: "Post", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
   {votable_id: 8, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 9, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1}
+  {votable_id: 9, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 1, votable_type: "Post", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 1, votable_type: "Comment", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 1, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 9, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 7, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 3, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 2, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: false, vote_scope: nil, vote_weight: 1},
+  {votable_id: 1, votable_type: "Comment", voter_id: 3, voter_type: "User", vote_flag: false, vote_scope: nil, vote_weight: 1},
+  {votable_id: 3, votable_type: "Comment", voter_id: 3, voter_type: "User", vote_flag: false, vote_scope: nil, vote_weight: 1}
 ])

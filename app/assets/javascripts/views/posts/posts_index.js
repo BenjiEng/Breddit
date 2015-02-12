@@ -3,7 +3,9 @@ BredditApp.Views.PostsIndex = Backbone.CompositeView.extend({
 
   events: {
     "click .upvote": "upvote",
-    "click .downvote": "downvote"
+    "click .upvoted": "deupvote",
+    "click .downvote": "downvote",
+    "click .downvoted": "dedownvote"
   },
 
   initialize: function(options){
@@ -20,9 +22,26 @@ BredditApp.Views.PostsIndex = Backbone.CompositeView.extend({
       success: function(){
         post.set('vote_count', post.get('vote_count') + 1);
         that.render();
+        that.$(".upvote" + "[data-id='"+ id + "']").removeClass('upvote').addClass('upvoted');
       }
     });
   },
+
+  deupvote: function(event){
+    var id = $(event.currentTarget).data('id');
+    var post = this.collection.get(id);
+    var newUp = new BredditApp.Models.Upvote({post_id: id});
+
+    var that = this;
+    newUp.save({}, {
+      success: function(){
+        post.set('vote_count', post.get('vote_count') - 1);
+        that.render();
+        that.$(".upvoted" + "[data-id='"+ id + "']").removeClass('upvoted').addClass('upvote');
+      }
+    });
+  },
+
 
   downvote: function(event){
     var id = $(event.currentTarget).data('id');
@@ -34,6 +53,22 @@ BredditApp.Views.PostsIndex = Backbone.CompositeView.extend({
       success: function(){
         post.set('vote_count', post.get('vote_count') - 1);
         that.render();
+        that.$(".downvote" + "[data-id='"+ id + "']").removeClass('downvote').addClass('downvoted');
+      }
+    });
+  },
+
+  dedownvote: function(event){
+    var id = $(event.currentTarget).data('id');
+    var post = this.collection.get(id);
+    var newUp = new BredditApp.Models.Upvote({post_id: id});
+
+    var that = this;
+    newUp.save({}, {
+      success: function(){
+        post.set('vote_count', post.get('vote_count') + 1);
+        that.render();
+        that.$("downvoted" + "[data-id='"+ id + "']").removeClass('downvoted').addClass('downvote');
       }
     });
   },

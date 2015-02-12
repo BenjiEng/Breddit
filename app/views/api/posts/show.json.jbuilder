@@ -13,4 +13,4 @@ json.comments @post.comments do |comment|
   json.time_ago time_ago_in_words(comment.created_at)
 end
 
-json.vote_count @post.votes_for.size
+json.vote_count @post.get_upvotes.size

@@ -3,7 +3,9 @@ BredditApp.Views.PostShow = Backbone.CompositeView.extend({
   events:{
     'click .del': "destroyPost",
     "click .upvote": "upvote",
-    "click .downvote": "downvote"
+    "click .upvoted": "deupvote",
+    "click .downvote": "downvote",
+    "click .downvoted": "dedownvote"
   },
 
   initialize: function (options) {
@@ -46,14 +48,63 @@ BredditApp.Views.PostShow = Backbone.CompositeView.extend({
 
   upvote: function(event){
     var id = $(event.currentTarget).data('id');
+    var post = this.model
     var newUp = new BredditApp.Models.Upvote({post_id: id});
-    newUp.save();
+
+    var that = this;
+    newUp.save({}, {
+      success: function(){
+        post.set('vote_count', post.get('vote_count') + 1);
+        that.render();
+        that.$(".upvote" + "[data-id='"+ id + "']").removeClass('upvote').addClass('upvoted');
+      }
+    });
   },
+
+  deupvote: function(event){
+    var id = $(event.currentTarget).data('id');
+    var post = this.model
+    var newUp = new BredditApp.Models.Upvote({post_id: id});
+
+    var that = this;
+    newUp.save({}, {
+      success: function(){
+        post.set('vote_count', post.get('vote_count') - 1);
+        that.render();
+        that.$(".upvoted" + "[data-id='"+ id + "']").removeClass('upvoted').addClass('upvote');
+      }
+    });
+  },
+
 
   downvote: function(event){
     var id = $(event.currentTarget).data('id');
+    var post = this.model
     var newDown = new BredditApp.Models.Downvote({post_id: id});
-    newDown.save();
+
+    var that = this;
+    newDown.save({},{
+      success: function(){
+        post.set('vote_count', post.get('vote_count') - 1);
+        that.render();
+        that.$(".downvote" + "[data-id='"+ id + "']").removeClass('downvote').addClass('downvoted');
+      }
+    });
+  },
+
+  dedownvote: function(event){
+    var id = $(event.currentTarget).data('id');
+    var post = this.model
+    var newUp = new BredditApp.Models.Upvote({post_id: id});
+
+    var that = this;
+    newUp.save({}, {
+      success: function(){
+        post.set('vote_count', post.get('vote_count') + 1);
+        that.render();
+        that.$("downvoted" + "[data-id='"+ id + "']").removeClass('downvoted').addClass('downvote');
+      }
+    });
   },
 
   render: function () {

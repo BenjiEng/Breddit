@@ -57,8 +57,19 @@ div.link {
   cursor: pointer;
 }
 
+.upvoted {
+  background-image: url('https://s3.amazonaws.com/bredditapp/sprite-reddit.png');
+  background-position: -63px -818px;
+  height: 14px;
+  width: 15px;
+  background-repeat: no-repeat;
+  display: block;
+  cursor: pointer;
+}
+
 .votecount {
-  text-align: center;
+  text-align: left-center;
+  margin-left: 3px;
   color: #c6c6c6;
   font: normal x-small verdana,arial,helvetica,sans-serif;
   font-weight: bold;
@@ -69,6 +80,16 @@ div.link {
 .downvote {
   background-image: url('https://s3.amazonaws.com/bredditapp/sprite-reddit.png');
   background-position: 0px -818px;
+  height: 14px;
+  width: 15px;
+  background-repeat: no-repeat;
+  display: block;
+  cursor: pointer;
+}
+
+.downvoted {
+  background-image: url('https://s3.amazonaws.com/bredditapp/sprite-reddit.png');
+  background-position: -21px -818px;
   height: 14px;
   width: 15px;
   background-repeat: no-repeat;

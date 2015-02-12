@@ -2,7 +2,7 @@ BredditApp.Views.CommentForm = Backbone.View.extend({
   template: JST["comments/form"],
   tagName: "form",
   events:{
-    "submit": "submit",
+    "click .save_com": "submit",
     "mousedown .new_com" :"clearTextArea",
     "keyup textarea": "renderPreview"
   },
@@ -28,14 +28,13 @@ BredditApp.Views.CommentForm = Backbone.View.extend({
 
   submit: function (event) {
     event.preventDefault();
-    var attrs = $(event.currentTarget).serializeJSON();
+    var attrs = $('.new_com').serializeJSON();
     var that = this;
     this.model.set(attrs)
     this.model.save({}, {
       success: function () {
         that.collection.add(that.model);
         that.model = new BredditApp.Models.Comment({post_id: that.model.get('post_id')});
-        // re-render to clear form/preview
         this.render();
       }
     });
