@@ -2,46 +2,97 @@
 <html>
 <head>
   <title>breddit: the front page of the bakery</title>
+  <link rel="icon" href="//www.redditstatic.com/icon.png" sizes="256x256" type="image/png">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <header class="main-head">
-      <nav class="top">
-        <ul class="subs-head">Some Default Subs:
-          <li> <a href="#/subreddits/54">HoeDown  </a> </li>
-          <li> <a href="#/subreddits/55">NotFunny </a> </li>
-          <li> <a href="#/subreddits/56">Awwww    </a> </li>
-          <li> <a href="#/subreddits/57">Robotz   </a> </li>
-        </ul>
-      </nav>
-  </header>
-  <br>
-  <a href="#"><img class="bay" src="/bay.jpg" alt="baymax" style="width:50px;height:50px"></a><span class="breddit">breddit</span>
+  <div id="header">
+      <ul class="subs-head">Default subs:
+        <li> <a class="animated zoomIn" href="#/subreddits/58">EpicMemers</a> - </li>
+        <li> <a class="animated zoomIn" href="#/subreddits/54">HoeDown</a> - </li>
+        <li> <a class="animated zoomIn" href="#/subreddits/56">Awwww</a> - </li>
+        <li> <a class="animated zoomIn" href="#/subreddits/57">Robotz</a> - </li>
+        <li> <a class="animated zoomIn" href="#/subreddits/59">BreadTelepathy</a> - </li>
+        <li> <a class="animated zoomIn" href="#/subreddits">All</a> </li>
+      </ul>
+      <a href="/#" style="color:black;text-decoration:none"><img class="bay" src="/bay.jpg" alt="baymax" style="width:28px;height:28px;margin-left:10px"><span class="breddit">breddit</span></a>
+      <ul class="tabmenu">
+        <li class="selected">
+          <a href="" class="choice">hot</a>
+        </li>
+        <li>
+          <a href="" class="choice">new</a>
+        </li>
+        <li>
+          <a href="" class="choice">rising</a>
+        </li>
+        <li>
+          <a href="" class="choice">controversial</a>
+        </li>
+        <li>
+          <a href="" class="choice">top</a>
+        </li>
+        <li>
+          <a href="" class="choice">gilded</a>
+        </li>
+        <li>
+          <a href="" class="choice">wiki</a>
+        </li>
+        <li>
+          <a href="" class="choice">promoted</a>
+        </li>
+      </ul>
+  </div>
 
-    <nav class="right-nav">
-        <% if current_user %>
-          <p class="user-name"> <%= current_user.username %> </p>
-          <p class="sign-out"> <%= button_to "Sign Out", session_url, method: :delete %> </p>
 
-          <div class="morelink">
-            <a class= "create-bar" href="#/posts/new">Submit a new post</a>
-            <div class="nub"></div>
-          </div>
-          <div class="morelink">
-            <a class= "create-bar" href="#/subreddits/new">Create your own subreddit</a>
-            <div class="subtitle">...for your project.</div>
-            <div class="subtitle">...for your movement.</div>
-          </div>
-          <br>
-        <% else %>
-          <%= link_to "Sign in!", new_session_url %>
-        <% end %>
-    </nav>
+  <div class="header-right">
+    <% if current_user %>
+      <span class="user-name"> <%= current_user.username %> (score) <a href="#/messages"><img src="/mail.jpg" alt="mail"></a> | preferences | </span>
+      <span class="sign-out"> <%= link_to "logout", session_url, method: :delete %> </span>
+    <% else %>
+      <span class="user-name">want to join? <%= link_to "sign in", new_session_url %></span>
+      <span class="sign-out">or <%= link_to "create an account", new_user_url %> in seconds | English</span>
+    <% end %>
+  </div>
 
+  <div class="right-nav">
+      <div class="spacer">
+        <form id="search" role="search">
+          <input id="search-input" type="text" name="q" placeholder="search" tabindex="20">
+        </form>
+      </div>
 
+      <div class="spacer">
+        <div class="morelink">
+          <a class= "create-bar" href="#/posts/new">Submit a new link</a>
+          <div class="nub"></div>
+        </div>
+      </div>
+
+      <div class="spacer">
+        <div class="morelink">
+          <a class= "create-bar" href="#/posts/new">Submit a new text post</a>
+          <div class="nub"></div>
+        </div>
+      </div>
+
+      <div class="spacer">
+        <div class="morelink">
+          <a class= "create-bar" href="#/subreddits/new">Create your own subreddit</a>
+          <div class="nub"></div>
+        </div>
+      </div>
+
+      <div class="sidebox">
+        <span><img class="bayside" src="/baymax.gif" alt="bae" style="width:50px;height:50px"></span>
+        <div class="subtitle">...for your project.</div>
+        <div class="subtitle">...for your movement.</div>
+      </div>
+
+</div>
 <% if flash[:errors] %>
   <% flash[:errors].each do |error| %>
     <%= error %>
@@ -52,4 +103,37 @@
 
 
 </body>
+<footer>
+<div class="footer-parent">
+  <div class="footer-rounded">
+
+    <div class="foot-col">
+      <ul class="flat-vert-hover">
+        <li class="flat-vert-title">about</li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <ul class="flat-vert-hover">
+        <li class="flat-vert-title">help</li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <ul class="flat-vert-hover">
+        <li class="flat-vert-title">tools</li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <ul class="flat-vert-hover">
+        <li class="flat-vert-title">:3</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+</footer>
 </html>

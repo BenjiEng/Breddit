@@ -1,4 +1,10 @@
-<li>
+<li style="list-style:none">
+  <div class="voteside">
+    <button class="upvote">Upvote</button>
+    <p><%= comment.escape('com_vote_count') %></p>
+    <button class="downvote">Downvote</button>
+  </div>
+  
   <div class="body">
     <%= comment.escape("body")%>
   <br>
@@ -13,9 +19,6 @@
     <div class="comment-form-wrapper"></div>
   <br>
 
-    <p>Vote Count:<%= comment.escape('com_vote_count') %></p>
-    <button class="upvote">Upvote</button>
-    <button class="downvote">Downvote</button>
 
   </div>
 

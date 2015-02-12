@@ -1,18 +1,138 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.content {
+  z-index: 1;
+  margin: 7px 5px 0px 5px;
+  margin-left: 15px;
+  display: block;
+}
 
-.post-ind-show {
+.content .spacer {
+  margin-bottom: 5px;
+}
+
+.siteTable {
+  list-style-type: none;
+}
+
+div.link {
+  margin: 0;
+  margin-bottom: 8px;
+  padding-left: 15px;
+  display: block;
+}
+
+.link .rank {
+  float: left;
+  margin-top: 15px;
+  color: #c6c6c6;
+  font-family: arial;
+  font-size: medium;
+  text-align: right;
+}
+
+.rank {
+  overflow: hidden;
+}
+
+.midcol {
+  width: 5.1ex;
+  display: block;
+  float: left;
+  margin-right: 7px;
+  margin-left: 7px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.upvote {
+  background-image: url('sprite-reddit.png');
+  background-position: -42px -818px;
+  background-repeat: no-repeat;
+}
+
+.votecount {
+  text-align: center;
+  color: #c6c6c6;
+  font: normal x-small verdana,arial,helvetica,sans-serif;
+  font-weight: bold;
+  font-size: small;
+}
+
+.downvote {
+  background-image: url('sprite-reddit.png');
+  background-position: -4px -250px;
+  background-repeat: no-repeat;
+}
+
+a.thumbnail {
+  float: left;
+  font-size: 0;
+  margin-left: 10;
+  overflow: hidden;
+  height: 60px;
+  width: 70px;
+  border: none;
+}
+
+.entry {
+  overflow: hidden;
+  margin-left: 3px;
+  opacity: 1;
+  display: block;
 
 }
 
-.box{
+//postshow~
+
+p.title {
+  display: inline-block;
+  color: blue;
+  outline: none;
+  margin-right: .4em;
+  padding: 0px;
+  overflow: hidden;
+  font-size: large;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+p.cont {
+  padding-left: 15px;
+}
+
+.box {
   display: none;
   width: 100%;
 }
 
-a:hover + .box,.box:hover{
+a:hover + .box,.box:hover {
   display: block;
   position: relative;
   z-index: 100;
+}
+
+.infoline {
+  color: #888;
+  font: normal x-small verdana,arial,helvetica,sans-serif;
+}
+
+.first {
+  color: #888;
+  font: bold x-small verdana,arial,helvetica,sans-serif;
+}
+
+.share {
+  color: #888;
+  font: bold x-small verdana,arial,helvetica,sans-serif;
+  padding-left: 4px;
+}
+
+div.comments-new {
+  padding-left: 15px;
+}
+
+div.comments-div {
+  padding-left: 15px;
 }

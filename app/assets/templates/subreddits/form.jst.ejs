@@ -1,13 +1,22 @@
-<h1 class="create_sub">Create a new SuBreddit</h1>
+<h1 class="create_sub">Create a subreddit</h1>
 
-  <label for="sub_name">SuBreddit Name</label>
-<br>
-  <input type="text" name="subreddit[name]" id="sub_name" value="<%= subreddit.escape('name') %>">
-<br>
-  <label for="sub_description">SuBreddit Description</label>
-<br>
-  <textarea name="subreddit[description]" id="sub_description" value="<%= subreddit.escape('description') %>"></textarea>
-<br>
+
+<div class="spacer">
+  <div class="roundfield">
+    <span class="p-title">name</span>
+    <div class="roundfield-content">
+      <input class="inp" type="text" name="subreddit[name]" id="sub_name" value="<%= subreddit.escape('name') %>">
+    </div>
+  </div>
+</div>
+
+<div class="spacer">
+  <div class="roundfield">
+    <span class="p-title">description</span>
+    <div class="roundfield-content">
+      <textarea class="inp" name="subreddit[description]" id="sub_description" value="<%= subreddit.escape('description') %>"></textarea>
+    </div>
+  </div>
+</div>
 
 <button>Bake the SubBreddit</button>
-<a href="#">Back to the Front!</a>

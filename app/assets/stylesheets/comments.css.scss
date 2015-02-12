@@ -1,3 +1,33 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//form
+.new_com {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 500px;
+  height: 100px;
+}
+
+.save_com {
+
+}
+
+.panestack-title {
+  margin: 10px 310px 0px 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted gray;
+  display: block;
+}
+
+//show
+.voteside {
+  padding-top: 6px;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.body {
+  display: inline-block;
+}

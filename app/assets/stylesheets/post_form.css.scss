@@ -1,0 +1,37 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div .content-post-form {
+  z-index: 1;
+  margin: 7px 5px 0px 15px;
+}
+div .roundfield {
+  width: 540px;
+  background-color: #cee3f8;
+  border-radius: 4px;
+  padding: 5px 10px 10px 10px;
+  font-size: large;
+}
+
+span .title {
+  font-size: large;
+}
+
+div .roundfield-content {
+  margin-top: 5px;
+  border: none;
+  vertical-align: top;
+}
+
+.inp {
+  font-size: 100%;
+  width: 520px;
+  padding: 3px;
+  margin: 0;
+  border: 1px solid gray;
+}
+
+.c-box {
+  font-size: small;
+}

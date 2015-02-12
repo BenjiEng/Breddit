@@ -1,16 +1,14 @@
-<h3>SuBreddits Index View</h3>
+<h3>All subreddits</h3>
 
 <ul class='subreddits'>
   <% subreddits.each(function (subreddit) { %>
-    <li>
-      <a href="#/subreddits/<%= subreddit.get('id') %>">
+    <p class="titlerow">
+        <a href="#/subreddits/<%= subreddit.get('id') %>">
           <%= subreddit.escape("name") %>
-      </a>
-    </li>
+        </a>
+    </p>
+    <div class="description">
+      <p> <%= subreddit.escape("description") %> </p>
+    </div>
   <% }); %>
 </ul>
-
-
-<ul class="subs"></ul>
-<a href="#/subreddits/new">New SuBreddit</a>
-<a href="#">Back to the Front!</a>

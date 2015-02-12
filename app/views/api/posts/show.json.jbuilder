@@ -1,6 +1,8 @@
 json.extract! @post, :id, :title, :url, :content, :user_id, :sub_id
 json.subreddit_name @post.subreddit.name
 json.subreddit_id @post.subreddit.id
+json.comments_count @post.comments.count
+json.user_name @post.user.username
 
 if current_user.id == @post.user_id
   json.owns_post true

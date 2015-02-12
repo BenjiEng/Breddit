@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
-  #before_action :require_signed_in!, except: [:show]
-  before_action :require_user_owns_post!, only: [:edit, :update]
+  before_action :require_signed_in!, except: [:show, :index]
+  # before_action :require_user_owns_post!, only: [:edit, :update]
 
   def create
     @post = Post.new(post_params)

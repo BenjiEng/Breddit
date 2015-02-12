@@ -14,7 +14,9 @@ BredditApp.Routers.Router = Backbone.Router.extend({
     "subreddits": "subredditsIndex",
     "subreddits/new": "newSubreddit",
     "subreddits/:id": "showSubreddit",
-    "subreddits/:id/edit": "editSubreddit"
+    "subreddits/:id/edit": "editSubreddit",
+
+    "messages": "messagesShow"
   },
 
 //posts//
@@ -84,6 +86,12 @@ BredditApp.Routers.Router = Backbone.Router.extend({
     var subreddit = BredditApp.Collections.subreddits.getOrFetch(id);
     var editView = new BredditApp.Views.SubredditForm({model: subreddit, collection: BredditApp.Collections.subreddits});
     this._swapView(editView);
+  },
+
+//messages
+  messagesShow: function(){
+    var messagesShow = new BredditApp.Views.MessagesShow();
+    this._swapView(messagesShow);
   },
 
 //other//

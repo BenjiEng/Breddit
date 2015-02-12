@@ -1,27 +1,45 @@
-<h1>herro!</h1>
+<div class="content-post-form">
 
+  <form>
+    <div class="spacer">
+      <div class="roundfield">
+        <span class="p-title">title</span>
+        <div class="roundfield-content">
+          <input class="inp" type="text" name="post[title]" id="post_title" value="<%= post.escape('title') %>">
+        </div>
+      </div>
+    </div>
 
-<h1 class="create_post">Create a new Post :3</h1>
-<form>
-<label for="post_title">Post Title</label>
-  <input type="text" name="post[title]" id="post_title" value="<%= post.escape('title') %>">
-<br>
+    <div class="spacer">
+      <div class="roundfield">
+        <span class="p-title">url</span>
+        <div class="roundfield-content">
+          <input class="inp" type="text" name="post[url]" id="post_url" value="">
+        </div>
+      </div>
+    </div>
 
-<label for="post_url">Link to URL</label>
-  <input type="text" name="post[url]" id="post_url" value="">
-<br>
+    <div class="spacer">
+      <div class="roundfield">
+        <span class="p-title">content</span>
+        <div class="roundfield-content">
+          <textarea class="inp" name="post[content]" id="post_content" value="<%= post.escape('content') %>"></textarea>
+        </div>
+      </div>
+    </div>
 
-<label for="post_content">Content</label>
-  <textarea name="post[content]" id="post_content" value="<%= post.escape('content') %>"></textarea>
-<br>
+    <div class="spacer">
+      <div class="roundfield">
+        <span class="p-title">choose a subreddit</span>
+        <div class="roundfield-content">
+          <% subreddits.each(function (subreddit) { %>
+            <input class="c-box" type="checkbox" name="post[sub_id]" id="sub_id" value="<%= subreddit.get('id') %>">
+              <%= subreddit.escape('name') %>
+            </input>
+          <% }); %>
+        </div>
+      </div>
+    </div>
 
-<h3>Subreddit</h3>
-  <% subreddits.each(function (subreddit) { %>
-      <input type="checkbox" name="post[sub_id]" id="sub_id" value="<%= subreddit.get('id') %>">
-      <%= subreddit.escape('name') %>
-    </input>
-  <% }); %>
-<br>
-
-<button>Create Post</button>
-<a href="#">Back to the Frontpage</a>
+  <button>submit</button>
+</div>

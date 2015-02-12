@@ -1,6 +1,78 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#header {
+  background-color: #CEE3F8;
+  border: 1px solid #5F99CF;
+  height: 65px;
+}
+
+ul.subs-head {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 23px;
+  font: normal x-small verdana,arial,helvetica,sans-serif;
+  background-color: #f0f0f0;
+  white-space: nowrap;
+  text-transform: uppercase;
+  border-bottom: 1px solid gray;
+  height: 18px;
+  line-height: 18px;
+}
+
+ul.subs-head li {
+  display: inline;
+  text-transform: uppercase;
+  font-color: black;
+}
+
+ul.subs-head li a:link {
+  color: black;
+}
+
+#header-bottom-left {
+  display: block;
+}
+
+.tabmenu {
+  position: absolute;
+  list-style-type: none;
+  white-space: nowrap;
+  display: inline-block;
+  margin-top: 27px;
+  vertical-align: bottom;
+}
+
+.tabmenu li {
+  display: inline;
+  margin: 0px 3px;
+}
+
+.tabmenu li a {
+  padding: 2px 6px 0 6px;
+  text-decoration: none;
+  text-color: #369;
+  background-color: #eff7ff;
+  border-bottom: 1px solid #5f99cf;
+  z-index: 100;
+  font: bold verdana,arial,helvetica,sans-serif;
+}
+
+.tabmenu li.selected a {
+  padding: 2px 6px 0 6px;
+  color: orangered;
+  background-color: white;
+  border: 1px solid #5f99cf;
+  border-bottom: 1px solid white;
+  z-index: 100;
+}
+
+.selected {
+  display: inline;
+  font-weight: bold;
+  margin: 0px 3px;
+}
 
 .bay {
   -webkit-transition: all 4s ease 0s;
@@ -21,38 +93,49 @@
 
 .breddit {
   padding-left: 20px;
-  font-size: larger;
+  font-size: 200%;
 }
 
-.main-head {
-  background-color: #CEE3F8;
-  border: 1px solid #5F99CF;
-}
-
-ul .subs-head {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul.subs-head li {
-  display: inline;
-  border: 1px solid black;
-}
-
-nav.right-nav {
+.header-right {
   position: absolute;
-  top: 70px;
-  right: 10px;
-  border: 1px solid black;
+  right: 0px;
+  top: 44px;
+  background-color: #EFF7FF;
+  padding: 4px;
+  line-height: 12px;
+  border-top-left-radius: 7px;
+  font: normal x-small verdana,arial,helvetica,sans-serif;
 }
 
-div.morelink {
+.right-nav {
+  position: absolute;
+  top: 80px;
+  right: 10px;
+}
+
+.spacer {
+  margin: 7px 0 12px 0;
+}
+
+#search-input{
+  width: 300px;
+  height: 30px;
+}
+
+div.sidebox{
+  font: normal x-small verdana,arial,helvetica,sans-serif;
+  background-color: white;
+  z-index: 1;
+  min-height: 100%;
+}
+
+.morelink {
   display: block;
   text-align: center;
   position: relative;
   border: 1px solid #c4dbf1;
   background: #ffffff none repeat-x scroll center left;
+  background-image: url(sprite-reddit.png);
   background-position: 0px -278px;
   background-repeat: repeat;
   font-size: 150%;
@@ -60,12 +143,96 @@ div.morelink {
   letter-spacing: -1px;
   line-height: 29px;
   height: 29px;
+}
 
-  font: normal verdana,arial,helvetica,sans-serif;
+.morelink a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #369;
+}
+
+.morelink .nub {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  height: 31px;
+  width: 24px;
+  background: #ffffff none no-repeat scroll center left;
+  background-image: url(sprite-reddit.JqPSSyjOUZE.png);
+  background-position: -30px -547px;
+  background-repeat: no-repeat;
+}
+
+.bayside{
+  position: absolute;
+  left: 10px;
+  top: 165px;
 }
 
 div.subtitle {
+  display:block;
+  margin-left: 100px;
+  color: gray;
+  font-size: 70%;
+}
+
+div.footer-parent {
+  position: relative;
+  top: 0px;
+  width: 100%;
   display: block;
-  font: verdana, arial, helvetica, sans-serif;
-  font-color: gray;
+  margin-left: 15px;
+  font-size: larger;
+  padding-top: 40px;
+  clear: both;
+  text-align: center;
+}
+
+div.footer-rounded {
+  color: gray;
+  padding: 5px;
+  margin: 15px;
+  border: 1px solid #F0F0F0;
+  display: inline-block;
+  border-radius: 7px;
+}
+
+div.foot-col {
+  float: left;
+  margin: 10px 0;
+  padding: 0 15px;
+  border-left: 1px solid #E0E0E0;
+  height: 9.5em;
+}
+
+ul.flat-vert-hover {
+  text-align: center;
+  list-style: none;
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+
+ul.flat-vert-hover.under {
+  font: normal x-small verdana,arial,helvetica,sans-serif;
+  text-decoration: none;
+  text-align: center;
+  color: #369;
+  list-style: none;
+  font-size: 70%;
+}
+
+li.flat-vert-title {
+  font-family: arial,verdana,helvetica,sans-serif;
+  text-align: center;
+  color: #777;
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 5px;
 }
