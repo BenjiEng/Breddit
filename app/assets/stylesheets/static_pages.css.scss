@@ -139,7 +139,7 @@ div.sidebox{
   position: relative;
   border: 1px solid #c4dbf1;
   background: #ffffff none repeat-x scroll center left;
-  background-image: url('https://s3.amazonaws.com/bredditapp/sprite-reddit.png?X-Amz-Date=20150212T194556Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=47b60da10fa2f73f1c6f8d917f89b72c474d2827504e192c6c381f1982b2af33&X-Amz-Credential=ASIAIPKYR3J5UMG2Q75A/20150212/us-east-1/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=AQoDYXdzEK3//////////wEakALxKNYnwnzMegwWFdiv42ibzpiNvR5IB8wgt7%2BvDNd314oRtRcKt4oFuBTMlyHa%2BII%2BPYOSK/WFw/mKxLI6S%2BEyl4Z/6WQlXrC8l015O2/wZZdMxe6UTxNaDlvZKQqyyItSM4eMw%2BVUxthoB/w3buITnnbe8uX2Ln7WfjYKhLMOHiabm3tuNhJ8biUthobxB8U1E2uC5DqYzifqnbEB8txz%2BflGS6rU5JOp32J25L0ZQQh8RMPMVZGCMd5lS7U6BVyUoN5vfeDZL%2BlX5/sH9aW4jC7GRCby9B0b3CAChCXE8hvbS7Fjy7xreF97omViUFmebl20rpzndd7jTt3gzD6IqrPRYPdlabh2JKiZXU/6yCDqgfSmBQ%3D%3D');
+  background-image: url('https://s3.amazonaws.com/bredditapp/sprite-reddit.png');
   background-position: 0px -278px;
   background-repeat: repeat;
   font-size: 150%;
@@ -165,7 +165,7 @@ div.sidebox{
   height: 31px;
   width: 24px;
   background: #ffffff none no-repeat scroll center left;
-  background-image: url('sprite-reddit.png');
+  background-image: url('https://s3.amazonaws.com/bredditapp/sprite-reddit.png');
   background-position: -30px -547px;
   background-repeat: no-repeat;
 }
