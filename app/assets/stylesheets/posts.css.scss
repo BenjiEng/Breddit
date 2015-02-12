@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .content {
-  z-index: 1;
   margin: 7px 5px 0px 5px;
   margin-left: 15px;
   display: block;
+  position: relative;
 }
 
 .content .spacer {
