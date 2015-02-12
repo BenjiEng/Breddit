@@ -3,7 +3,7 @@ BredditApp.Views.CommentsShow = Backbone.View.extend({
   template2: JST["comments/form"],
 
   events:{
-    "click button.destroy-comment": "destroyComment",
+    "click .destroy-comment": "destroyComment",
     // "submit form": "endEditing"
     "click .comment-reply": "renderCommentForm",
     "click .upvote": "upvote",

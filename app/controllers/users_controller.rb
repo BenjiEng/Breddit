@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      sub_to_def(@user)
+      # sub_to_def(@user)
       sign_in(@user)
       redirect_to("#")
     else

@@ -20,9 +20,9 @@
             <span class="rank"></span>
 
             <div class="midcol">
-              <div class="upvote" data-id="<%= post.id %>">Up</div>
+              <div class="upvote" data-id="<%= post.id %>"></div>
               <p class="votecount"><%= post.escape("vote_count") %></p>
-              <div class="downvote" data-id="<%= post.id %>">Down</div>
+              <div class="downvote" data-id="<%= post.id %>"></div>
             </div>
 
             <a class="thumbnail" href="<%= post.escape("url")%>" target="_blank">
@@ -34,7 +34,7 @@
                 <p class="title"><%= post.escape("title") %></p>
               </a>
 
-              <p class="infoline"> submitted <%= post.escape("time_ago") %> ago by <%= post.escape("user_name") %> to
+              <p class="infoline"> submitted <%= post.escape("time_ago") %> ago by <a href=""><%= post.escape("user_name") %></a> to
                 <a href="#/subreddits/<%= post.escape("subreddit_id")%>"> <%= post.escape("subreddit_name") %></a>
                 <br>
                 <a class="first" href="#/posts/<%= post.get('id') %>"><%= post.escape("comments_count") %> comments</a>

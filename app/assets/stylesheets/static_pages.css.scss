@@ -59,7 +59,6 @@ ul.subs-head li a:link {
   text-color: #369;
   background-color: #eff7ff;
   border-bottom: 1px solid #5f99cf;
-  z-index: 100;
   font: bold verdana,arial,helvetica,sans-serif;
 }
 
@@ -115,6 +114,7 @@ ul.subs-head li a:link {
   position: absolute;
   top: 80px;
   right: 10px;
+  z-index: 1;
 }
 
 .spacer {

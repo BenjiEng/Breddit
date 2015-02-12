@@ -12,7 +12,6 @@ BredditApp.Views.CommentForm = Backbone.View.extend({
   },
 
   clearTextArea: function(event){
-    console.log("yo");
     this.$('.new_com').empty();
   },
 
