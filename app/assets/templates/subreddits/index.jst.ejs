@@ -6,6 +6,9 @@
         <a href="#/subreddits/<%= subreddit.get('id') %>">
           <%= subreddit.escape("name") %>
         </a>
+        <span class="sub-button">
+          <a class="unsub-option">unsubscribe</a>
+        </span>
     </p>
     <div class="description">
       <p> <%= subreddit.escape("description") %> </p>

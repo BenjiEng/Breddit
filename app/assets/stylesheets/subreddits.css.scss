@@ -1,6 +1,11 @@
 // Place all the styles related to the Subreddits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.create_sub_div {
+  position: absolute;
+  margin-left: 15px;
+}
+
 .titlerow {
   margin-top: 0px;
   margin-bottom: 1px;
@@ -14,6 +19,7 @@
 }
 
 .description{
+  width: 700px;
   font: normal x-small verdana,arial,helvetica,sans-serif;
   font-size: small;
   max-width: 60em;
@@ -53,4 +59,16 @@
   font-weight: bold;
   font-size: 19px;
   text-transform: lowercase;
+}
+
+.bake {
+  width:120px;
+  padding:5px;
+  text-align:center;
+  background: whiteSmoke;
+  font-weight: bold;
+  color: #444;
+  text-decoration: none;
+  border: 1px solid #888;
+  border-radius: 5px;
 }

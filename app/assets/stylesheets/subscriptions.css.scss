@@ -4,19 +4,29 @@
 
 .sub-button {
   border: 1px solid #444;
-  padding: 1px 6px;
   background: #ffffff none repeat-x scroll center left;
   color: white;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
   line-height: 20px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .sub-option {
+  background-image: url('https://s3.amazonaws.com/bredditapp/sprite-reddit.png');
+  background-position: 0px 0px;
+  background-repeat: repeat;
+  width: 68px;
+  height: 20;
+  font-color: white;
+}
+
+.unsub-option {
   background-image: url('https://s3.amazonaws.com/bredditapp/sprite-reddit.png');
   background-position: 0px -182px;
   background-repeat: repeat;
   width: 68px;
   height: 20;
+  font-color: white;
 }
