@@ -52,11 +52,11 @@
 
   <div class="header-right">
     <% if current_user %>
-      <span class="user-name"> <%= current_user.username %> (score) <a href="#/messages"><img src="/mail.jpg" alt="mail"></a> | preferences | </span>
-      <span class="sign-out"> <%= link_to "logout", session_url, method: :delete %> </span>
+      <span class="user-name"> <span class="hvr-bob"><%= current_user.username %></span> (1188880) <a href="#/messages"><img src="/mail.jpg" alt="mail"></a> | preferences | </span>
+      <span class="sign-out"> <span class="hvr-bob"><%= link_to "logout", session_url, method: :delete %> </span>
     <% else %>
-      <span class="user-name">want to join? <%= link_to "sign in", new_session_url %></span>
-      <span class="sign-out">or <%= link_to "create an account", new_user_url %> in seconds | English</span>
+      <span class="user-name">want to join? <span class="hvr-bob"><%= link_to "sign in", new_session_url %></span>
+      <span class="sign-out">or <span class="hvr-bob"><%= link_to "create an account", new_user_url %></span> in seconds | English</span>
     <% end %>
   </div>
 
@@ -90,8 +90,8 @@
 
       <div class="sidebox">
         <span><img class="bayside" src="/baymax.gif" alt="bae" style="width:50px;height:50px"></span>
-        <div class="subtitle">...for your project.</div>
-        <div class="subtitle">...for your movement.</div>
+        <div class="subtitle hvr-sink">...for your project.</div>
+        <div class="subtitle hvr-sink">...for your movement.</div>
       </div>
 
 </div>
