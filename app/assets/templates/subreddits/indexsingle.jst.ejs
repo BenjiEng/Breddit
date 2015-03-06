@@ -1,0 +1,16 @@
+    <p class="titlerow">
+        <a href="#/subreddits/<%= subreddit.get('id') %>">
+          <%= subreddit.escape("name") %>
+        </a>
+        <span class="sub-button">
+          <% if (subreddit.escape('subbed') === 'true') { %>
+            <a class="unsub-option">unsubscribe</a>
+          <% } else { %>
+            <a class="sub-option">subscribe</a>
+          <% }; %>
+        </span>
+    </p>
+
+    <div class="description">
+      <p> <%= subreddit.escape("description") %> </p>
+    </div>

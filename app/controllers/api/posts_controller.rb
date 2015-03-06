@@ -28,9 +28,32 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
-    render "index"
+    if current_user #if theres a user logged in /not prob
+
+      # @posts = current_user.subreddits.first.posts #current user doesnt work
+
+      @posts = []
+      current_user.subreddits.each do |subreddit|
+        subreddit.posts.each do |post|
+          @posts.push(post)
+        end
+      end
+      render "index"
+    # else
+      #@posts = Post.all #[#<>, #<>, #<>]
+      # render "index"
+    end
   end
+
+  # def sub_post(user)
+  #   pots = []
+  #   user.subreddits.each do |subreddit|
+  #     subreddit.each do |posts|
+  #       pots.push(posts)
+  #     end
+  #   end
+  #   return pots
+  # end
 
   def destroy
     @post = Post.find(params[:id])
@@ -41,9 +64,13 @@ class Api::PostsController < ApplicationController
 #upvotes/downvotes
 
   def upvote
-    @post = Post.find(params[:id])
-    @post.upvote_by current_user
-    render json: @post
+    # if current_user how do i redirect to log in if lurking?
+      @post = Post.find(params[:id])
+      @post.upvote_by current_user
+      render json: @post
+    # else
+    #   redirect_to(new_session_url)
+    # end
   end
 
   def downvote

@@ -6,7 +6,7 @@
 
             <span class="rank"></span>
 
-            <div class="midcol">
+            <div class="midcol" data-id="<%= post.id %>">
               <div class="upvote" data-id="<%= post.id %>"></div>
               <div class="votecount"><%= post.escape("vote_count") %></div>
               <div class="downvote" data-id="<%= post.id %>"></div>
@@ -17,7 +17,7 @@
             </a>
 
             <div class="entry">
-              <a class="hvr-pulse-shrink" href="<%= post.escape("url")%>" target="_blank">
+              <a href="<%= post.escape("url")%>" target="_blank">
                 <p class="title"><%= post.escape("title") %></p>
               </a>
 

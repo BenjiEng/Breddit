@@ -5,7 +5,7 @@ BredditApp.Views.CommentsShow = Backbone.View.extend({
   events:{
     "click .destroy-comment": "destroyComment",
     // "submit form": "endEditing"
-    "click .comment-reply": "renderCommentForm",
+    // "click .comment-reply": "renderCommentForm",
     "click .upvotecom": "upvote",
     "click .downvotecom": "dedownvote"
   },

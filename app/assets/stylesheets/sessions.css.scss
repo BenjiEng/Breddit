@@ -52,14 +52,14 @@ video#bgvid {
 #new_container {
   z-index: 2;
   position: relative;
-  left: 55%;
+  left: 40px;
   font: normal verdana,arial,helvetica,sans-serif;
   font-weight:100;
   background: rgba(0,0,0,0.4);
   border-radius: 5px;
   color: white;
   padding: 2rem;
-  width: 40%;
+  width: 500px;
   margin:2rem;
   font-size: 1.2rem;
 }
@@ -72,7 +72,6 @@ h1 {
 }
 
 .log {
-  padding-left: 10px;
 }
 
 .loginp {
@@ -81,9 +80,6 @@ h1 {
 }
 
 .logbut {
-  position: absolute;
-  top: 87px;
-  left: 81%;
   color: white;
   border-color: black;
   font-weight: bold;

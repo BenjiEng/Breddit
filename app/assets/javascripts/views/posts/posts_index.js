@@ -16,7 +16,7 @@ BredditApp.Views.PostsIndex = Backbone.CompositeView.extend({
     var id = $(event.currentTarget).data('id');
     var post = this.collection.get(id);
     var newUp = new BredditApp.Models.Upvote({post_id: id});
-
+    // var that = this.$(".midcol" + "[data-id='"+ id + "']");
     var that = this;
     newUp.save({}, {
       success: function(){
@@ -77,5 +77,7 @@ BredditApp.Views.PostsIndex = Backbone.CompositeView.extend({
     var renderedContent = this.template({posts: this.collection});
     this.$el.html(renderedContent);
     return this;
-  }
+  },
+  //do i need to rewrite render?
+
 });

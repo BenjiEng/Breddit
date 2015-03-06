@@ -65,14 +65,12 @@ BredditApp.Routers.Router = Backbone.Router.extend({
 
   subredditsIndex: function(){
     BredditApp.Collections.subreddits.fetch();
-    var indexView = new BredditApp.Views.SubredditsIndex({collection: BredditApp.Collections.subreddits});
+    //need to fetch subscriptions??
+    // var newSub = new BredditApp.Models.Subscription();
+    var indexView = new BredditApp.Views.SubredditsIndex({
+      collection: BredditApp.Collections.subreddits,
+      subscriptions: BredditApp.Collections.subscriptions});
     this._swapView(indexView);
-  },
-
-  newSubreddit: function(){
-    var newSubreddit = new BredditApp.Models.Subreddit();
-    var newView = new BredditApp.Views.SubredditForm({model: newSubreddit, collection: BredditApp.Collections.subreddits});
-    this._swapView(newView);
   },
 
   showSubreddit: function(id){

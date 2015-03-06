@@ -1,7 +1,11 @@
-== README
+== README ==
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app inspired by the popular website reddit.com. It implements a RESTful API and has
+typical user authentication. Users have the ability to post links, upvote or downvote links, create
+
+and comment on posts.
+
+It was created using Ruby on Rails and Backbone.js and
 
 Things you may want to cover:
 
@@ -23,6 +27,4 @@ Things you may want to cover:
 
 * ...
 
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

@@ -1,41 +1,26 @@
-<script>
-$(document).ready(function () {
-
-  $(".player").mb_YTPlayer();
-
-});
-</script>
-
-<!-- Warming Up -->
-<link href='http://fonts.googleapis.com/css?family=Buenard:700' rel='stylesheet' type='text/css'>
-<script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
-
-<!--Video Section-->
-<section class="content-section video-section">
-  <div class="pattern-overlay">
-    <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=ybp-30dkt5w',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>breddit</h1>
+<video autoplay  poster="" id="bgvid" loop>
+  <source src="/Big6.mp4" type="video/mp4">
+  </video>
 
 
-          <form action="<%= users_url %>" method="post">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <label for="user_username">Username</label>
-            <input type="text" name="user[username]" value="<%= @user.username %>" id="user_username">
 
-            <label for="user_password">Password</label>
-            <input type="password" name="user[password]" id="user_password">
+  <div id="new_container">
+    <div class="row">
+      <h1>breddit</h1>
 
-            <input type="submit">
-          </form>
+      <form class="log" action="<%= users_url %>" method="post">
+        <input type="hidden" name="authenticity_token" id="" value="<%= form_authenticity_token %>">
+
+        <label for="user_username">Username</label>
+        <input class="loginp" type="text" name="user[username]" id="user_username" value="">
+
+        <label for="user_password">Password</label>
+        <input class="loginp" type="password" name="user[password]" id="user_password" value="">
+
+        <input class="logbut hvr-shutter-out-horizontal" type="submit" value="submit"></input>
+      </form>
 
 
-          <h3>Please create account.</h3>
-        </div>
-      </div>
+      <h4 style="padding-left:10px">Please create a new account.</h4>
     </div>
   </div>
-</section>
-<!--Video Section Ends Here-->

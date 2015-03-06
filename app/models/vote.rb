@@ -1,4 +1,5 @@
-class UserVote < ActiveRecord::Base
+class Vote < ActiveRecord::Base
+
   validates :user, presence: true
   # don't let the user vote twice
   validates :user_id, uniqueness: { scope: [:votable_id, :votable_type] }
@@ -7,14 +8,14 @@ class UserVote < ActiveRecord::Base
   belongs_to(
     :user,
     class_name: "User",
-    foreign_key: :user_id,
+    foreign_key: :voter_id,
     primary_key: :id
   )
 
   belongs_to(
     :post,
     class_name: "Post",
-    foreign_key: :post_id,
+    foreign_key: :votable_id,
     primary_key: :id
   )
 

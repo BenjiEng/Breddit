@@ -29,22 +29,22 @@
           <a href="" class="choice">new</a>
         </li>
         <li>
-          <a href="" class="choice">rising</a>
+          <span  class="choice">rising</span>
         </li>
         <li>
-          <a href="" class="choice">controversial</a>
+          <span  class="choice">controversial</span>
         </li>
         <li>
-          <a href="" class="choice">top</a>
+          <span  class="choice">top</span>
         </li>
         <li>
-          <a href="" class="choice">gilded</a>
+          <span  class="choice">gilded</span>
         </li>
         <li>
-          <a href="" class="choice">wiki</a>
+          <span  class="choice">wiki</span>
         </li>
         <li>
-          <a href="" class="choice">promoted</a>
+          <span href="" class="choice">promoted</span>
         </li>
       </ul>
   </div>
@@ -52,7 +52,7 @@
 
   <div class="header-right">
     <% if current_user %>
-      <span class="user-name"> <span class="hvr-bob"><%= current_user.username %></span> (1188880) <a href="#/messages"><img src="/mail.jpg" alt="mail"></a> | preferences | </span>
+      <span class="user-name"> <span class="hvr-bob"><%= current_user.username %></span> (132) <a href="#/messages"><img src="/mail.jpg" alt="mail"></a> | preferences | </span>
       <span class="sign-out"> <span class="hvr-bob"><%= link_to "logout", session_url, method: :delete %> </span>
     <% else %>
       <span class="user-name">want to join? <span class="hvr-bob"><%= link_to "sign in", new_session_url %></span>
@@ -76,7 +76,7 @@
 
       <div class="spacer">
         <div class="morelink">
-          <a class= "create-bar" href="#/posts/new">Submit a new text post</a>
+          <p>Submit a new text post</p>
           <div class="nub"></div>
         </div>
       </div>

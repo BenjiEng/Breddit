@@ -9,7 +9,7 @@ class Api::SubscriptionsController < ApplicationController
   def destroy
     @subscription = Subscription.find(params[:id])
     @subscription.destroy
-    render json: {status: 'destroyed'}
+    render json: {}
   end
 
   private

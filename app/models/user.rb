@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  acts_as_voter
+
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
   validates :session_token, :username, uniqueness: true
@@ -24,6 +27,14 @@ class User < ActiveRecord::Base
     :subreddits,
     through: :subscriptions
   )
+
+  has_many(
+    :votes,
+    class_name: "Vote",
+    foreign_key: :voter_id,
+    primary_key: :id
+  )
+
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
