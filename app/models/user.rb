@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   acts_as_voter
 
   validates :username, :password_digest, :session_token, presence: true

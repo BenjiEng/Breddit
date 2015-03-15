@@ -52,11 +52,11 @@
 
   <div class="header-right">
     <% if current_user %>
-      <span class="user-name"> <span class="hvr-bob"><%= current_user.username %></span> (132) <a href="#/messages"><img src="/mail.jpg" alt="mail"></a> | preferences | </span>
-      <span class="sign-out"> <span class="hvr-bob"><%= link_to "logout", session_url, method: :delete %> </span>
+      <span class="user-name"> <span><%= current_user.username %></span> (132) <a href="#/messages"><img src="/mail.jpg" alt="mail"></a> | preferences | </span>
+      <span class="sign-out"> <span><%= link_to "logout", session_url, method: :delete %> </span>
     <% else %>
-      <span class="user-name">want to join? <span class="hvr-bob"><%= link_to "sign in", new_session_url %></span>
-      <span class="sign-out">or <span class="hvr-bob"><%= link_to "create an account", new_user_url %></span> in seconds | English</span>
+      <span class="user-name">want to join? <span><%= link_to "sign in", new_session_url %></span>
+      <span class="sign-out">or <span><%= link_to "create an account", new_user_url %></span> in seconds | English</span>
     <% end %>
   </div>
 

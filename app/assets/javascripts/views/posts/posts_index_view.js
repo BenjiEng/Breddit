@@ -12,11 +12,6 @@ BredditApp.Views.PostsIndexView = Backbone.View.extend({
     this.listenTo(this.model, 'add sync remove reset', this.render);
   },
 
-  // addUpvote: function(){
-  //   var upvoteView = new BredditApp.Views.UpvoteShow();
-  //   this.$()
-  // },
-
   upvote: function(event){
     // var id = this.id
     // var post = this.collection.get(id);
