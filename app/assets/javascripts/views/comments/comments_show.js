@@ -4,10 +4,6 @@ BredditApp.Views.CommentsShow = Backbone.View.extend({
 
   events:{
     "click .destroy-comment": "destroyComment",
-    // "submit form": "endEditing"
-    // "click .comment-reply": "renderCommentForm",
-    "click .upvotecom": "upvote",
-    "click .downvotecom": "dedownvote"
   },
 
   initialize: function(){
@@ -29,30 +25,6 @@ BredditApp.Views.CommentsShow = Backbone.View.extend({
       collection: this.collection})
     this.$('.comment-form-wrapper').html(commentForm.render().$el)
 
-  },
-
-  upvote: function(event){
-    $.ajax({
-      url: "/api/comments/" + this.model.id + "/like",
-      dataType: "json",
-      type: 'POST'
-    });
-    this.render();
-    // var id = $(event.currentTarget).data('id');
-    // var newUp = new BredditApp.Models.Upvote({comment_id: id});
-    // newUp.save();
-  },
-
-  downvote: function(event){
-    $.ajax({
-      url: "/api/comments/" + this.model.id + "/dislike",
-      dataType: "json",
-      type: 'POST'
-    });
-    this.render();
-    // var id = $(event.currentTarget).data('id');
-    // var newDown = new BredditApp.Models.Downvote({comment_id: id});
-    // newDown.save();
   },
 
   render: function(){

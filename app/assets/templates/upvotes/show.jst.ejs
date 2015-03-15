@@ -1,0 +1,15 @@
+<div class="midcol">
+  <% if (post.escape('up_voted') === 'true') { %>
+    <div class="upvoted"></div>
+  <% } else { %>
+    <div class="upvote"></div>
+  <% } %>
+
+  <div class="votecount"><%= post.escape("vote_count") %></div>
+
+  <% if (post.escape('up_voted') === 'false') { %>
+    <div class="downvoted"></div>
+  <% } else { %>
+    <div class="downvote" data-id="<%= post.id %>"></div>
+  <% } %>
+</div>

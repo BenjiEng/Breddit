@@ -1,16 +1,17 @@
-    <p class="titlerow">
-        <a href="#/subreddits/<%= subreddit.get('id') %>">
-          <%= subreddit.escape("name") %>
-        </a>
-        <span class="sub-button">
-          <% if (subreddit.escape('subbed') === 'true') { %>
-            <a class="unsub-option">unsubscribe</a>
-          <% } else { %>
-            <a class="sub-option">subscribe</a>
-          <% }; %>
-        </span>
-    </p>
+<p class="titlerow">
+    <a href="#/subreddits/<%= subreddit.get('id') %>">
+      <%= subreddit.escape("name") %>
+    </a>
 
-    <div class="description">
-      <p> <%= subreddit.escape("description") %> </p>
-    </div>
+      <% if (subreddit.escape('subbed') === 'true') { %>
+        <div class="unsub-option"></div>
+      <% } else { %>
+        <div class="sub-option"></div>
+      <% }; %>
+</p>
+
+<div class="description">
+  <p> <%= subreddit.escape("description") %> </p>
+</div>
+
+<span id="subscribe-button"></span>

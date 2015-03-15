@@ -31,4 +31,11 @@ class Post < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many(
+    :post_votes,
+    class_name: "PostVote",
+    foreign_key: :post_id,
+    primary_key: :id
+  )
+
 end

@@ -28,7 +28,7 @@ BredditApp.Models.Subreddit = Backbone.Model.extend({
 
   parse: function(response){
     if (response.sub_id) {
-      this.subscription().set({id: response.subscription_id}); //it was here
+      this.subscription().set({id: response.subscription_id});
       delete response.sub_id;
     }
     return response;

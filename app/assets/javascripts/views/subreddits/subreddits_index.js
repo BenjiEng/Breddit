@@ -8,7 +8,7 @@ BredditApp.Views.SubredditsIndex = Backbone.View.extend({
   },
 
   addToList: function(subreddit){
-    var subView = new BredditApp.Views.SubredditIndexView({model: subreddit});
+    var subView = new BredditApp.Views.SubredditsIndexView({model: subreddit});
     this.$('.subreddits').append(subView.$el);
   },
 
@@ -17,7 +17,7 @@ BredditApp.Views.SubredditsIndex = Backbone.View.extend({
     this.$el.html(renderedContent);
 
     this.collection.each(function (subreddit) {
-      var indexItem = new BredditApp.Views.SubredditIndexView({model: subreddit});
+      var indexItem = new BredditApp.Views.SubredditsIndexView({model: subreddit});
       this.$('ul').append(indexItem.render().$el);
     }.bind(this));
 

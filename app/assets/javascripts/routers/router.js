@@ -23,7 +23,9 @@ BredditApp.Routers.Router = Backbone.Router.extend({
 
   postsIndex: function(){
     BredditApp.Collections.posts.fetch();
-    var indexView = new BredditApp.Views.PostsIndex({collection: BredditApp.Collections.posts});
+    var indexView = new BredditApp.Views.PostsIndex({
+      collection: BredditApp.Collections.posts
+      });
     this._swapView(indexView);
   },
 
@@ -42,22 +44,16 @@ BredditApp.Routers.Router = Backbone.Router.extend({
   },
 
   showPost: function(id){
+    BredditApp.Collections.posts.fetch();
     var post = BredditApp.Collections.posts.getOrFetch(id);
     var showView = new BredditApp.Views.PostShow({model: post});
     this._swapView(showView);
-  },
-
-  editSubreddit: function(id){
-    var post = BredditApp.Collections.posts.getOrFetch(id);
-    var editView = new BredditApp.Views.PostForm({model: post, collection: BredditApp.Collections.posts});
-    this._swapView(editView);
   },
 
 //comments//
 
   newComment: function(id){
     var newComment = new BredditApp.Models.Comment({post_id: id});
-    // var currentPost =
     var newCommentView = new BredditApp.Views.CommentForm({model: newComment, collection: BredditApp.Collections.comments});
   },
 
@@ -65,8 +61,6 @@ BredditApp.Routers.Router = Backbone.Router.extend({
 
   subredditsIndex: function(){
     BredditApp.Collections.subreddits.fetch();
-    //need to fetch subscriptions??
-    // var newSub = new BredditApp.Models.Subscription();
     var indexView = new BredditApp.Views.SubredditsIndex({
       collection: BredditApp.Collections.subreddits,
       subscriptions: BredditApp.Collections.subscriptions});
@@ -80,11 +74,11 @@ BredditApp.Routers.Router = Backbone.Router.extend({
     this._swapView(showView);
   },
 
-  editSubreddit: function(id){
-    var subreddit = BredditApp.Collections.subreddits.getOrFetch(id);
-    var editView = new BredditApp.Views.SubredditForm({model: subreddit, collection: BredditApp.Collections.subreddits});
-    this._swapView(editView);
-  },
+  // editSubreddit: function(id){
+  //   var subreddit = BredditApp.Collections.subreddits.getOrFetch(id);
+  //   var editView = new BredditApp.Views.SubredditForm({model: subreddit, collection: BredditApp.Collections.subreddits});
+  //   this._swapView(editView);
+  // },
 
 //messages
   messagesShow: function(){

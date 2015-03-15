@@ -1,17 +1,15 @@
 <li style="list-style:none">
-  <div class="voteside">
+  <!-- <div class="voteside">
     <div class="upvotecom"></div>
     <div class="votecount"><%= comment.escape('com_vote_count') %></div>
     <div class="downvotecom"></div>
-  </div>
+  </div> -->
 
   <div class="comm-body"><%= comment.escape("body")%></div>
   <div class="infoline">by <a href=""><%= comment.get("author") %></a> about <%= comment.get("time_ago")%> ago</div>
-
     <% if (comment.escape('owns_comment') === 'true') { %>
       <div class="destroy-comment">delete</div>
     <% }; %>
-
-  <div class="comment-form-wrapper"></div>
+  <br>
 
 </li>

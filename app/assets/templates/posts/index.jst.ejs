@@ -1,36 +1,4 @@
-<div class="content">
-  <div class="spacer">
-    <div id="siteTable" class="sitetable">
-      <% posts.each(function (post) { %>
-          <div class="link">
-
-            <span class="rank"></span>
-
-            <div class="midcol" data-id="<%= post.id %>">
-              <div class="upvote" data-id="<%= post.id %>"></div>
-              <div class="votecount"><%= post.escape("vote_count") %></div>
-              <div class="downvote" data-id="<%= post.id %>"></div>
-            </div>
-
-            <a class="thumbnail" href="<%= post.escape("url")%>" target="_blank">
-              <img src="<%= post.escape("url")%>">
-            </a>
-
-            <div class="entry">
-              <a href="<%= post.escape("url")%>" target="_blank">
-                <p class="title"><%= post.escape("title") %></p>
-              </a>
-
-              <p class="infoline"> submitted <%= post.escape("time_ago") %> ago by <a href=""><%= post.escape("user_name") %></a> to
-                <a href="#/subreddits/<%= post.escape("subreddit_id")%>"> <%= post.escape("subreddit_name") %></a>
-                <br>
-                <a class="first" href="#/posts/<%= post.get('id') %>"><%= post.escape("comments_count") %> comments</a>
-                <a class="share" href="">share</a>
-              </p>
-            </div>
-
-          </div>
-      <% }); %>
-    </div>
-  </div>
-</div>
+<br>
+<br>
+<ul class='posts'>
+</ul>

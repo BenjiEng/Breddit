@@ -1,6 +1,6 @@
-BredditApp.Views.SubredditIndexView = Backbone.View.extend({
+BredditApp.Views.SubredditsIndexView = Backbone.View.extend({
   template: JST['subreddits/indexsingle'],
-  tagName: "li",
+
   events: {
     'click .sub-option': 'sub',
     'click .unsub-option': 'unsub',
@@ -10,17 +10,18 @@ BredditApp.Views.SubredditIndexView = Backbone.View.extend({
     this.listenTo(this.model, 'add sync remove reset', this.render);
   },
 
-  sub: function(event){ //need to create a subscription
+  sub: function(event){
     event.preventDefault();
-    this.model.subscribe();
-    this.render();
+    var newSub = this.model.subscribe();
+    this.$(".sub-option").removeClass('sub-option').addClass('unsub-option');
   },
 
   unsub: function(event){
     event.preventDefault();
     this.model.unsubscribe();
-    this.render();
+    this.$(".unsub-option").removeClass('unsub-option').addClass('sub-option');
   },
+
 
   render: function(){
     var renderedContent = this.template({subreddit: this.model});

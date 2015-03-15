@@ -7,19 +7,13 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :subscriptions, only: [:create, :destroy]
     resources :subreddits
-
-    resources :comments, except: [:new] do
-        member do
-          post "like",   to: "comments#upvote"
-          post "dislike", to: "comments#downvote"
-        end
-      end
-
     resources :posts, except: [:new] do
       member do
         post "like",    to: "posts#upvote"
         post "dislike", to: "posts#downvote"
+
       end
+
     end
 
   end
