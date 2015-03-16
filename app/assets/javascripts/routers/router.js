@@ -74,11 +74,11 @@ BredditApp.Routers.Router = Backbone.Router.extend({
     this._swapView(showView);
   },
 
-  // editSubreddit: function(id){
-  //   var subreddit = BredditApp.Collections.subreddits.getOrFetch(id);
-  //   var editView = new BredditApp.Views.SubredditForm({model: subreddit, collection: BredditApp.Collections.subreddits});
-  //   this._swapView(editView);
-  // },
+  newSubreddit: function(){
+    var subreddit = new BredditApp.Models.Subreddit();
+    var newView = new BredditApp.Views.SubredditForm({model: subreddit})
+    this._swapView(newView);
+  },
 
 //messages
   messagesShow: function(){
