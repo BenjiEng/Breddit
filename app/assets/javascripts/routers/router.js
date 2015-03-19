@@ -8,13 +8,11 @@ BredditApp.Routers.Router = Backbone.Router.extend({
     "": "postsIndex",
     "posts/new": "newPost",
     "posts/:id": "showPost",
-    "post/:id/edit": "editPost",
     "post/:id/comments/new": "newComment",
 
     "subreddits": "subredditsIndex",
     "subreddits/new": "newSubreddit",
     "subreddits/:id": "showSubreddit",
-    "subreddits/:id/edit": "editSubreddit",
 
     "messages": "messagesShow"
   },
