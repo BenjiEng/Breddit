@@ -19,6 +19,8 @@ Subreddit.create!([
 Post.create!([
   {title: "How I feel watching the Superbowl Commercials", url: "http://www.quickmeme.com/img/dd/dda8461c1ce0d0a9914a70186b8933113f23ab4479aeee6bb5b7b7ac98a27ec9.jpg", content: "I'm a gravy guy.", user_id: 1, sub_id: 1},
   {title: "I found the \"Beef it's what's for dinner\" sheet music!", url: "http://s3.amazonaws.com/halleonard-pagepreviews/HL_DDS_0000000000873184.png", content: "A timeless classic.", user_id: 1, sub_id: 2},
+  {title: "Nostalgia", url: "http://i.giphy.com/iLqpYAbKGOrqU.gif", content: "Calvin and Hobbes", user_id: 3, sub_id: 1},
+  {title: "pat pat", url: "http://i.imgur.com/W6IZ9jN.gif", content: "pat pat", user_id: 4, sub_id: 3}
   {title: ":p", url: "http://i.imgur.com/diRA4v2.jpg", content: ":>", user_id: 1, sub_id: 3},
   {title: "very Yoda like", url: "http://i.imgur.com/u1CJWdF.jpg", content: "There is no try.", user_id: 1, sub_id: 3},
   {title: "ouch! (●´ω｀●)", url: "http://i.imgur.com/Oq4oG1b.jpg", content: "Just a flesh wound.", user_id: 1, sub_id: 3},
@@ -35,8 +37,6 @@ Post.create!([
   {title: "Yes indeed...", url: "http://www.fandompost.com/wp-content/uploads/2014/04/OrderRabbit2b.jpg", content: "D:", user_id: 3, sub_id: 5},
   {title: "Sometimes I feel a bit embarrassed when people ask me to read the minds of different loaves", url: "https://readingisdelicious.files.wordpress.com/2012/07/fairybreadjinrui.jpg", content: "Really tho.", user_id: 3, sub_id: 5},
   {title: "Hit the jackpot boys!", url: "http://i.imgur.com/BNvTf.jpg?1", content: "Dolla dolla", user_id: 3, sub_id: 1},
-  {title: "Nostalgia", url: "http://i.giphy.com/iLqpYAbKGOrqU.gif", content: "Calvin and Hobbes", user_id: 3, sub_id: 1},
-  {title: "pat pat", url: "http://i.imgur.com/W6IZ9jN.gif", content: "pat pat", user_id: 4, sub_id: 3}
 ])
 
 Comment.create!([
