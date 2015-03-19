@@ -35,7 +35,7 @@ BredditApp.Views.CommentForm = Backbone.View.extend({
       success: function () {
         that.collection.add(that.model);
         that.model = new BredditApp.Models.Comment({post_id: that.model.get('post_id')});
-        this.render();
+        that.render();
       }
     });
   }

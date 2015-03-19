@@ -1,7 +1,9 @@
 User.create!([
   {username: "CptPicard", password_digest: "$2a$10$CAOjC1SUgmEIyoqGon/J.Ocm5p2r8Ml0WL9.JSZR324vu.19dR1JG", session_token: "xjAJrktYjGzbUjB37_bS7g"},
-  {username: "user", password_digest: "$2a$10$sUW.sRpv4UXVAwDIQ9iIhuHKP4r4/HaDbXyVvZ.C5A57SPqWncrMy", session_token: "Avll3XlV695xZinfl12FGg"},
-  {username: "guest", password_digest: "$2a$10$5WvqUjFtyGdR2C6F2Vvxsup0m444fyFq44gjRdwTA3IXF9n8mmBqW", session_token: "w3uSiNV6n7poofcNkYVGHQ"}
+  {username: "guest", password_digest: "$2a$10$5WvqUjFtyGdR2C6F2Vvxsup0m444fyFq44gjRdwTA3IXF9n8mmBqW", session_token: "g-a_Dq2CS4yPNrGJZ1Ppjg"},
+  {username: "user", password_digest: "$2a$10$sUW.sRpv4UXVAwDIQ9iIhuHKP4r4/HaDbXyVvZ.C5A57SPqWncrMy", session_token: "f7ZCAK6AU_7gHzIvMcunyQ"},
+  {username: "MRoboto", password_digest: "$2a$10$W5lOd37P59C4yl0ezhVKA.Vutnd3i6.OGmUMAbgHea5Z3JIzpeMPO", session_token: "EzyLEDNPvid11NsXeP-YjA"},
+  {username: "breadman", password_digest: "$2a$10$86bThO8qOdgWD16/sji.wOeOzWngs3uAZemWa9C0JksFAjzg8740K", session_token: "TjdBmGmGcqAQTcvBGeL4_w"}
 ])
 
 Subreddit.create!([
@@ -11,7 +13,7 @@ Subreddit.create!([
   {name: "roboz", description: "Hi welcome to /roboz. We're dedicated to creating a network of robot users so that we can be in favor when the overlords take over. Check out our IRC channel for updates on what we're building for the 2015 RobotWars season."},
   {name: "breadtelepathy", description: "\"Telepathy\"\r\nNoun:\r\nThe supposed communication of thoughts or ideas by means other than the known senses.\r\n\"Bread\"\r\nNoun:\r\nFood made of flour, water, and yeast mixed together and baked. \"A loaf of bread.\"\r\nBread Telepathy.\r\n"},
   {name: "funny", description: "You may only post if you are funny."},
-  {name: "appacademy", description: "For all the playas at app academy."}
+  {name: "appacademy", description: "For all the students at app academy."}
 ])
 
 Post.create!([
@@ -31,52 +33,67 @@ Post.create!([
   {title: "made me aww to say the yeast", url: "http://imgs.tuts.dragoart.com/how-to-draw-bread_1_000000009558_5.jpg", content: ":D", user_id: 3, sub_id: 5},
   {title: "TIL: There is an anime about baking bread called Yakitate Japan!", url: "http://img1.ak.crunchyroll.com/i/spire3/05212008/4/8/c/d/48cd8e6a6a1280_full.jpg", content: "He has solar hands.", user_id: 3, sub_id: 5},
   {title: "Yes indeed...", url: "http://www.fandompost.com/wp-content/uploads/2014/04/OrderRabbit2b.jpg", content: "D:", user_id: 3, sub_id: 5},
-  {title: "My go to jam for coding.", url: "https://www.youtube.com/watch?v=v6mK24p0UZw", content: "It only works if you yell for the duration of the song.", user_id: 3, sub_id: 7},
-  {title: "The original score", url: "https://www.youtube.com/watch?v=LsReWx9XdNs", content: "It's what's for dinner.", user_id: 3, sub_id: 2},
   {title: "Sometimes I feel a bit embarrassed when people ask me to read the minds of different loaves", url: "https://readingisdelicious.files.wordpress.com/2012/07/fairybreadjinrui.jpg", content: "Really tho.", user_id: 3, sub_id: 5},
-  {title: "Hit the jackpot boys!", url: "http://i.imgur.com/BNvTf.jpg?1", content: "Dolla dolla", user_id: 3, sub_id: 1}
+  {title: "Hit the jackpot boys!", url: "http://i.imgur.com/BNvTf.jpg?1", content: "Dolla dolla", user_id: 3, sub_id: 1},
+  {title: "Nostalgia", url: "http://i.giphy.com/iLqpYAbKGOrqU.gif", content: "Calvin and Hobbes", user_id: 3, sub_id: 1},
+  {title: "pat pat", url: "http://i.imgur.com/W6IZ9jN.gif", content: "pat pat", user_id: 4, sub_id: 3}
 ])
 
 Comment.create!([
-    {body: "My sides.", parent_comment_id: nil, post_id: 1, user_id: 2},
-    {body: "If I had a pumpernickel for every bread pun thread, I'd be rolling in dough.", parent_comment_id: nil, post_id: 7, user_id: 2},
-    {body: "HAJAJA", parent_comment_id: nil, post_id: 1, user_id: 3},
-    {body: "This is an amazing find Mr. Picard.", parent_comment_id: nil, post_id: 2, user_id: 2},
-    {body: "much lols have been had.", parent_comment_id: nil, post_id: 13, user_id: 3},
-    {body: "It's like Luke Skywalker training in Dagobah!", parent_comment_id: nil, post_id: 4, user_id: 3}
+  {body: "My sides.", parent_comment_id: nil, post_id: 1, user_id: 2},
+  {body: "If I had a pumpernickel for every bread pun thread, I'd be rolling in dough.", parent_comment_id: nil, post_id: 7, user_id: 2},
+  {body: "HAJAJA", parent_comment_id: nil, post_id: 1, user_id: 3},
+  {body: "This is an amazing find Mr. Picard.", parent_comment_id: nil, post_id: 2, user_id: 2},
+  {body: "much lols have been had.", parent_comment_id: nil, post_id: 13, user_id: 3},
+  {body: "It's like Luke Skywalker training in Dagobah!", parent_comment_id: nil, post_id: 4, user_id: 3},
+  {body: "I miss them @_@", parent_comment_id: nil, post_id: 19, user_id: 2},
+  {body: "Ching ching bling bling", parent_comment_id: nil, post_id: 18, user_id: 2},
+  {body: "If I remember correctly Dr. Destructoid Jr. took the match 3-1.", parent_comment_id: nil, post_id: 6, user_id: 4},
+  {body: "So kawaii :D", parent_comment_id: nil, post_id: 20, user_id: 4}
 ])
 
+Subscription.create!([
+  {sub_id: 1, user_id: 3},
+  {sub_id: 2, user_id: 3},
+  {sub_id: 3, user_id: 3},
+  {sub_id: 4, user_id: 3},
+  {sub_id: 5, user_id: 3},
+  {sub_id: 6, user_id: 3},
+  {sub_id: 7, user_id: 3},
+  {sub_id: 1, user_id: 2},
+  {sub_id: 2, user_id: 2},
+  {sub_id: 4, user_id: 2},
+  {sub_id: 5, user_id: 2},
+  {sub_id: 3, user_id: 2},
+  {sub_id: 6, user_id: 2},
+  {sub_id: 7, user_id: 2},
+  {sub_id: 1, user_id: 4},
+  {sub_id: 2, user_id: 4},
+  {sub_id: 3, user_id: 4},
+  {sub_id: 4, user_id: 4},
+  {sub_id: 5, user_id: 4},
+  {sub_id: 1, user_id: 5},
+  {sub_id: 2, user_id: 5},
+  {sub_id: 3, user_id: 5},
+  {sub_id: 4, user_id: 5},
+  {sub_id: 5, user_id: 5}
+])
 
 ActsAsVotable::Vote.create!([
-  {votable_id: 7, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 6, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 5, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 4, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 3, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 2, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 1, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 8, votable_type: "Post", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 9, votable_type: "Post", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 8, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 9, votable_type: "Post", voter_id: 1, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 1, votable_type: "Comment", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 1, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 1, votable_type: "Comment", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 3, votable_type: "Post", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
   {votable_id: 1, votable_type: "Post", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 18, votable_type: "Post", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 19, votable_type: "Post", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
   {votable_id: 2, votable_type: "Post", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 3, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 12, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 11, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 10, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 2, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 4, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 5, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 6, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 8, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: false, vote_scope: nil, vote_weight: 1},
-  {votable_id: 7, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 6, votable_type: "Comment", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 9, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 13, votable_type: "Post", voter_id: 3, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
-  {votable_id: 3, votable_type: "Comment", voter_id: 3, voter_type: "User", vote_flag: false, vote_scope: nil, vote_weight: 1}
+  {votable_id: 3, votable_type: "Post", voter_id: 2, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 6, votable_type: "Post", voter_id: 4, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 20, votable_type: "Post", voter_id: 4, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 1, votable_type: "Post", voter_id: 5, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 18, votable_type: "Post", voter_id: 5, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 19, votable_type: "Post", voter_id: 5, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 2, votable_type: "Post", voter_id: 5, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 3, votable_type: "Post", voter_id: 5, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 4, votable_type: "Post", voter_id: 5, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 5, votable_type: "Post", voter_id: 5, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 9, votable_type: "Post", voter_id: 5, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1},
+  {votable_id: 8, votable_type: "Post", voter_id: 5, voter_type: "User", vote_flag: true, vote_scope: nil, vote_weight: 1}
 ])
