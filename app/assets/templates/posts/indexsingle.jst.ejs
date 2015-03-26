@@ -3,6 +3,7 @@
 
             <span class="rank"></span>
 
+            <% if (post.escape('logged_in') === 'true') { %>
               <div class="midcol">
                 <% if (post.escape('up_voted') === 'true') { %>
                   <div class="upvoted"></div>
@@ -18,6 +19,7 @@
                   <div class="downvote" data-id="<%= post.id %>"></div>
                 <% } %>
               </div>
+            <% } %>
 
             <a class="thumbnail" href="<%= post.escape("url")%>" target="_blank">
               <img src="<%= post.escape("url")%>">

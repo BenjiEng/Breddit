@@ -20,4 +20,10 @@ json.array! @posts do |post|
   else
     json.up_voted nil
   end
+
+  if current_user
+    json.logged_in true
+  else
+    json.logged_in false
+  end
 end
