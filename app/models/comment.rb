@@ -3,7 +3,6 @@ class Comment < ActiveRecord::Base
 
   validates :body, :post_id, :user_id, presence: true
 
-  # belongs_to :post, inverse_of: :comments
   belongs_to(
     :user,
     class_name: "User",

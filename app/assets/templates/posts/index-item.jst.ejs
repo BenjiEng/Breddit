@@ -21,12 +21,12 @@
               </div>
             <% } %>
 
-            <a class="thumbnail" href="<%= post.escape("url")%>" target="_blank">
+            <a class="thumbnail" href="<%= post.escape("url")%>">
               <img src="<%= post.escape("url")%>">
             </a>
 
             <div class="entry">
-              <a href="<%= post.escape("url")%>" target="_blank">
+              <a href="<%= post.escape("url")%>">
                 <p class="title"><%= post.escape("title") %></p>
               </a>
 
@@ -34,7 +34,6 @@
                 <a href="#/subreddits/<%= post.escape("subreddit_id")%>"> <%= post.escape("subreddit_name") %></a>
                 <br>
                 <a class="first" href="#/posts/<%= post.get('id') %>"><%= post.escape("comments_count") %> comments</a>
-                <a class="share" href="">share</a>
               </p>
             </div>
 

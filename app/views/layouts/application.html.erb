@@ -7,8 +7,8 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
+<body>
   <div id="header">
       <ul class="subs-head">Default subs:
         <li> <a class="animated zoomIn" href="#/subreddits/1">EpicMemers</a> - </li>
@@ -20,13 +20,13 @@
         <li> <a class="animated zoomIn" href="#/subreddits/7">Appacademy</a> - </li>
         <li> <a class="animated zoomIn" href="#/subreddits">All</a> </li>
       </ul>
-      <a href="/#" style="color:black;text-decoration:none"><img class="bay" src="/bay.jpg" alt="baymax" style="width:28px;height:28px;margin-left:10px"><span class="breddit">breddit</span></a>
+      <a href="www.breddit.io" style="color:black;text-decoration:none"><img class="bay" src="/bay.jpg" alt="baymax" style="width:28px;height:28px;margin-left:10px"><span class="breddit">breddit</span></a>
       <ul class="tabmenu">
         <li class="selected">
           <a href="" class="choice">hot</a>
         </li>
         <li>
-          <a href="" class="choice">new</a>
+          <span class="choice">new</span>
         </li>
         <li>
           <span  class="choice">rising</span>
@@ -94,16 +94,9 @@
         <div class="subtitle hvr-sink">...for your movement.</div>
       </div>
 
-</div>
-<% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-    <%= error %>
-  <% end %>
-<% end %>
-
+  </div>
 
 <%= yield %>
-
 
 </body>
 

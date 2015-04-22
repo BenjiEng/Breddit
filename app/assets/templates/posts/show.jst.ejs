@@ -3,11 +3,23 @@
     <div class="link">
       <span class="rank"></span>
 
-      <div class="midcol">
-        <div class="upvote" data-id="<%= post.id %>"></div>
-        <div class="votecount"><%= post.escape("vote_count") %></div>
-        <div class="downvote" data-id="<%= post.id %>"></div>
-      </div>
+      <% if (post.escape('logged_in') === 'true') { %>
+        <div class="midcol">
+          <% if (post.escape('up_voted') === 'true') { %>
+            <div class="upvoted"></div>
+          <% } else { %>
+            <div class="upvote"></div>
+          <% } %>
+
+          <div class="votecount"><%= post.escape("vote_count") %></div>
+
+          <% if (post.escape('up_voted') === 'false') { %>
+            <div class="downvoted"></div>
+          <% } else { %>
+            <div class="downvote" data-id="<%= post.id %>"></div>
+          <% } %>
+        </div>
+      <% } %>
 
       <a class="thumbnail" href="<%= post.escape("url")%>" target="_blank">
         <img src="<%= post.escape("url")%>">
@@ -22,7 +34,6 @@
           <a href="#/subreddits/<%= post.escape("subreddit_id")%>"> <%= post.escape("subreddit_name") %></a>
           <br>
           <a class="first" href="#/posts/<%= post.get('id') %>"><%= post.escape("comments_count") %> comments</a>
-          <a class="share" href="">share</a>
           <% if (post.escape('owns_post') === 'true') { %>
             <a class="del">delete</a>
           <% }; %>

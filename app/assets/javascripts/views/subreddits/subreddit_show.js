@@ -3,12 +3,11 @@ BredditApp.Views.SubredditShow = Backbone.View.extend({  //extend Composite View
   events: {
     "click .upvote": "upvote",
     "click .downvote": "downvote",
-    // "click .sub-option": "subscribe",
-    // "click .unsub-option": "unsubscribe"
   },
 
   initialize: function(){
     this.listenTo(this.model, 'sync', this.render);
+    
   },
 
   upvote: function(event){
