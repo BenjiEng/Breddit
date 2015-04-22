@@ -27,7 +27,7 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-    if current_user #if theres a user logged in
+    if current_user
       @posts = []
       current_user.subreddits.each do |subreddit|
         subreddit.posts.each do |post|
@@ -35,7 +35,7 @@ class Api::PostsController < ApplicationController
         end
       end
     else
-      @posts = Post.all #we still want to show all posts for someone not logged in.
+      @posts = Post.all
     end
     render "index"
   end
