@@ -1,30 +1,9 @@
 == README ==
 
-This is an app inspired by the popular website reddit.com. It implements a RESTful API and has
-typical user authentication. Users have the ability to post links, upvote or downvote links, create
+This is a fullstack application inspired by the popular website reddit.com. It implements a RESTful API and has
+typical user authentication with BCrypt for password encryptiong.
 
-and comment on posts.
+Users have the ability to post links, upvote or downvote links, create and comment on posts.
 
-It was created using Ruby on Rails and Backbone.js and
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-<tt>rake doc:app</tt>.
+It was created using Ruby on Rails and Backbone.js and overrides the parse
+method in Backbone to create the same associations found in the Rails backend.
