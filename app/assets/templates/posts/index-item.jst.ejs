@@ -1,41 +1,42 @@
-    <div id="siteTable" class="sitetable">
-          <div class="link">
+<div id="siteTable" class="sitetable">
+      <div class="link">
 
-            <span class="rank"></span>
+        <span class="rank"></span>
 
-            <% if (post.escape('logged_in') === 'true') { %>
-              <div class="midcol">
-                <% if (post.escape('up_voted') === 'true') { %>
-                  <div class="upvoted"></div>
-                <% } else { %>
-                  <div class="upvote"></div>
-                <% } %>
-
-                <div class="votecount"><%= post.escape("vote_count") %></div>
-
-                <% if (post.escape('up_voted') === 'false') { %>
-                  <div class="downvoted"></div>
-                <% } else { %>
-                  <div class="downvote" data-id="<%= post.id %>"></div>
-                <% } %>
-              </div>
+        <% if (post.escape('logged_in') === 'true') { %>
+          <div class="midcol">
+            <% if (post.escape('up_voted') === 'true') { %>
+              <div class="upvoted"></div>
+            <% } else { %>
+              <div class="upvote"></div>
             <% } %>
 
-            <a class="thumbnail" href="<%= post.escape("url")%>">
-              <img src="<%= post.escape("url")%>">
-            </a>
+            <div class="votecount"><%= post.escape("vote_count") %></div>
 
-            <div class="entry">
-              <a href="<%= post.escape("url")%>">
-                <p class="title"><%= post.escape("title") %></p>
-              </a>
-
-              <p class="infoline"> submitted <%= post.escape("time_ago") %> ago by <a href=""><%= post.escape("user_name") %></a> to
-                <a href="#/subreddits/<%= post.escape("subreddit_id")%>"> <%= post.escape("subreddit_name") %></a>
-                <br>
-                <a class="first" href="#/posts/<%= post.get('id') %>"><%= post.escape("comments_count") %> comments</a>
-              </p>
-            </div>
-
+            <% if (post.escape('up_voted') === 'false') { %>
+              <div class="downvoted"></div>
+            <% } else { %>
+              <div class="downvote" data-id="<%= post.id %>"></div>
+            <% } %>
           </div>
-    </div>
+        <% } %>
+
+        <a class="thumbnail" href="<%= post.escape("url")%>" target="_blank">
+          <img src="<%= post.escape("url")%>">
+        </a>
+
+        <div class="entry">
+          <a href="<%= post.escape("url")%>" target="_blank">
+            <p class="title"><%= post.escape("title") %></p>
+          </a>
+
+          <p class="infoline"> submitted <%= post.escape("time_ago") %> ago by <a href=""><%= post.escape("user_name") %></a> to
+            <a href="#/subreddits/<%= post.escape("subreddit_id")%>"> <%= post.escape("subreddit_name") %></a>
+            <br>
+            <a class="first" href="#/posts/<%= post.get('id') %>"><%= post.escape("comments_count") %> comments</a>
+            <a class="share" href="">share</a>
+          </p>
+        </div>
+
+      </div>
+</div>

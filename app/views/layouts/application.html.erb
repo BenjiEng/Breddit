@@ -5,93 +5,24 @@
   <link rel="icon" href="http://img4.wikia.nocookie.net/__cb20120914190104/mysingingmonsters/images/e/e1/Bread.png" sizes="256x256" type="image/png">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+
+  <% if current_user %>
+    <script>BredditApp.currentUserId = <%= current_user.id %></script>
+  <% end %>
+
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-  <div id="header">
-      <ul class="subs-head">Default subs:
-        <li> <a class="animated zoomIn" href="#/subreddits/1">EpicMemers</a> - </li>
-        <li> <a class="animated zoomIn" href="#/subreddits/2">HoeDown</a> - </li>
-        <li> <a class="animated zoomIn" href="#/subreddits/3">Awwww</a> - </li>
-        <li> <a class="animated zoomIn" href="#/subreddits/4">Roboz</a> - </li>
-        <li> <a class="animated zoomIn" href="#/subreddits/5">BreadTelepathy</a> - </li>
-        <li> <a class="animated zoomIn" href="#/subreddits/6">Funny</a> - </li>
-        <li> <a class="animated zoomIn" href="#/subreddits/7">Appacademy</a> - </li>
-        <li> <a class="animated zoomIn" href="#/subreddits">All</a> </li>
-      </ul>
-      <a href="/#" style="color:black;text-decoration:none"><img class="bay" src="/bay.jpg" alt="baymax" style="width:28px;height:28px;margin-left:10px"><span class="breddit">breddit</span></a>
-      <ul class="tabmenu">
-        <li class="selected">
-          <a href="" class="choice">hot</a>
-        </li>
-        <li>
-          <span class="choice">new</span>
-        </li>
-        <li>
-          <span  class="choice">rising</span>
-        </li>
-        <li>
-          <span  class="choice">controversial</span>
-        </li>
-        <li>
-          <span  class="choice">top</span>
-        </li>
-        <li>
-          <span  class="choice">gilded</span>
-        </li>
-        <li>
-          <span  class="choice">wiki</span>
-        </li>
-        <li>
-          <span href="" class="choice">promoted</span>
-        </li>
-      </ul>
-  </div>
-
-
   <div class="header-right">
-    <% if current_user %>
-      <span class="user-name"> <span><%= current_user.username %></span> (132) <a href="#/messages"><img src="/mail.jpg" alt="mail"></a> | preferences | </span>
-      <span class="sign-out"> <span><%= link_to "logout", session_url, method: :delete %> </span>
-    <% else %>
-      <span class="user-name">want to join? <span><%= link_to "sign in", new_session_url %></span>
-      <span class="sign-out">or <span><%= link_to "create an account", new_user_url %></span> in seconds | English</span>
-    <% end %>
-  </div>
-
-  <div class="right-nav">
-      <br>
-      <br>
-
-      <div class="spacer">
-        <div class="morelink">
-          <a class="create-bar" href="#/posts/new">Submit a new link</a>
-          <div class="nub"></div>
-        </div>
-      </div>
-
-      <div class="spacer">
-        <div class="morelink">
-          <p>Submit a new text post</p>
-          <div class="nub"></div>
-        </div>
-      </div>
-
-      <div class="spacer">
-        <div class="morelink">
-          <a class="create-bar" href="#/subreddits/new">Create your own subreddit</a>
-          <div class="nub"></div>
-        </div>
-      </div>
-
-      <div class="sidebox">
-        <span><img class="bayside" src="/baymax.gif" alt="bae" style="width:50px;height:50px"></span>
-        <div class="subtitle hvr-sink">...for your project.</div>
-        <div class="subtitle hvr-sink">...for your movement.</div>
-      </div>
-
-  </div>
+     <% if current_user %>
+       <span class="user-name"> <span><%= current_user.username %></span> (132) <a href="#/messages"><img src="/mail.jpg" alt="mail"></a> | preferences | </span>
+       <span class="sign-out"> <span><%= link_to "logout", session_url, method: :delete %> </span>
+     <% else %>
+       <span class="user-name">want to join? <span><%= link_to "sign in", new_session_url %></span>
+       <span class="sign-out">or <span><%= link_to "create an account", new_user_url %></span> in seconds | English</span>
+     <% end %>
+   </div>
 
 <%= yield %>
 

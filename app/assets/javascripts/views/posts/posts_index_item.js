@@ -7,7 +7,7 @@ BredditApp.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   initialize: function(){
-    // this.listenTo(this.model, 'add sync remove reset', this.render);
+    this.listenTo(this.model, 'add sync remove reset', this.render);
   },
 
   upvote: function(event){
@@ -37,8 +37,8 @@ BredditApp.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   render: function(){
-    var content = this.template({post: this.model});
-    this.$el.html(content);
+    var renderedContent = this.template({post: this.model});
+    this.$el.html(renderedContent);
     return this;
   },
 

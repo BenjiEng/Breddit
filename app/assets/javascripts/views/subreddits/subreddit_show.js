@@ -7,7 +7,6 @@ BredditApp.Views.SubredditShow = Backbone.View.extend({  //extend Composite View
 
   initialize: function(){
     this.listenTo(this.model, 'sync', this.render);
-    
   },
 
   upvote: function(event){
@@ -37,28 +36,6 @@ BredditApp.Views.SubredditShow = Backbone.View.extend({  //extend Composite View
       }
     });
   },
-
-  // subscribe: function(event){
-  //   var newSub = new BredditApp.Models.Subscription({sub_id: this.model.id});
-  //   $target = $(event.currentTarget)
-  //   newSub.save({},{
-  //     success: function(){
-  //       $target.html("Unsubscribe");
-  //       $target.addClass("unsub-button").removeClass("sub-button");
-  //     }
-  //   });
-  // },
-  //
-  // unsubscribe: function(event){
-  //       var subscrip_id = this.model.get('subscription_id');
-  //       var targetSubscription = new BredditApp.Models.Subscription({id: subscrip_id});
-  //       targetSubscription.destroy({
-  //         success: function(){
-  //           $target.html("Subscribe");
-  //           $target.addClass("sub-button").removeClass("unsub-button");
-  //         }
-  //       });
-  // },
 
   render: function(){
     var renderedContent = this.template({subreddit: this.model, posts: this.collection});
