@@ -1,5 +1,7 @@
 == README ==
 
+[Live Link](http://www.breddit.io/session/new)
+
 This is a fullstack application inspired by the popular website reddit.com. It implements a RESTful API and has
 typical user authentication with BCrypt for password encryptiong.
 
