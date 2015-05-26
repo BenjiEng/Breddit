@@ -7,17 +7,27 @@
 <div id="new_container">
   <div class="row">
       <h1>breddit</h1>
+      <br>
 
       <form class="log" action="<%= session_url %>" method="post">
         <input type="hidden" name="authenticity_token" id="" value="<%= form_authenticity_token %>">
 
         <label for="user_username">Username</label>
-        <input class="loginp" type="text" name="user[username]" id="user_username" value="guest">
+        <input class="loginp" type="text" name="user[username]" id="user_username">
 
         <label for="user_password">Password</label>
-        <input class="loginp" type="password" name="user[password]" id="user_password" value="password">
+        <input class="loginp" type="password" name="user[password]" id="user_password">
 
-        <input class="logbut hvr-shutter-out-horizontal" type="submit" value="submit"></input>
+        <input class="logbut hvr-shutter-out-horizontal" type="submit" value="Submit"></input>
+      </form>
+
+      <form class="log" action="<%= session_url %>" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="user[username]" value="guest">
+        <input type="hidden" name="user[password]" value="password">
+        <div class="guest-log">
+          <input class="logbut hvr-shutter-out-horizontal" type="submit" value="Guest Login"></input>
+        </div>
       </form>
 
 
